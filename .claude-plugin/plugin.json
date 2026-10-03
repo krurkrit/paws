@@ -1,0 +1,25 @@
+{
+  "name": "paws",
+  "version": "1.0.0",
+  "description": "Terse, minimal, safe coding agent: less code and fewer tokens without dropping safeguards",
+  "license": "MIT",
+  "homepage": "https://github.com/krurkrit/paws",
+  "repository": "https://github.com/krurkrit/paws",
+  "author": {
+    "name": "Krurkrit Phoosakul",
+    "url": "https://github.com/krurkrit"
+  },
+  "documentationUrl": "https://github.com/krurkrit/paws/blob/main/README.md",
+  "supportUrl": "https://github.com/krurkrit/paws/issues",
+  "privacyPolicyUrl": "https://github.com/krurkrit/paws/blob/main/PRIVACY.md",
+  "termsOfServiceUrl": "https://github.com/krurkrit/paws/blob/main/LICENSE",
+  "keywords": [
+    "token-efficiency",
+    "terse",
+    "minimal-code",
+    "code-quality",
+    "codex",
+    "csharp",
+    "typescript"
+  ]
+}

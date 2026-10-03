@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="608" viewBox="0 0 960 608" role="img" aria-label="Claude Sonnet 5.5: savings vs baseline">
+<style>.t{font-family:Inter,'Noto Sans',sans-serif;font-size:14px}.n{font-family:'JetBrains Mono',Consolas,monospace;font-size:14px}.b{font-weight:600}</style>
+<rect width="960" height="608" rx="8" fill="#1a1a19"/>
+<text class="t b" x="24" y="32" fill="#ffffff">Claude Sonnet 5.5: savings vs baseline</text>
+<rect x="24" y="46" width="14" height="14" rx="3" fill="#256abf"/><text class="t" x="44" y="58" fill="#c3c2b7">Paws lite</text>
+<rect x="134" y="46" width="14" height="14" rx="3" fill="#5598e7"/><text class="t" x="154" y="58" fill="#c3c2b7">Paws full</text>
+<rect x="244" y="46" width="14" height="14" rx="3" fill="#9ec5f4"/><text class="t" x="264" y="58" fill="#c3c2b7">Paws ultra</text>
+<rect x="362" y="46" width="14" height="14" rx="3" fill="#d95926"/><text class="t" x="382" y="58" fill="#c3c2b7">Caveman</text>
+<rect x="457" y="46" width="14" height="14" rx="3" fill="#199e70"/><text class="t" x="477" y="58" fill="#c3c2b7">Ponytail</text>
+<text class="t" x="936" y="58" text-anchor="end" fill="#c3c2b7">% saved vs baseline, higher is better</text>
+<text class="t b" x="24" y="94" fill="#ffffff">Answer words</text>
+<line x1="219.02842892768078" y1="104" x2="219.02842892768078" y2="238" stroke="#3d3d3a" stroke-width="1"/>
+<text class="t" x="118" y="121" text-anchor="end" fill="#c3c2b7">Caveman</text>
+<path d="M219.02842892768078,108H290.99850374064835Q294.99850374064835,108 294.99850374064835,112V120Q294.99850374064835,124 290.99850374064835,124H219.02842892768078Z" fill="#d95926"><title>Caveman: 28% saved vs baseline</title></path>
+<text class="n" x="300.99850374064835" y="121" text-anchor="start" fill="#ffffff">28%</text>
+<text class="t" x="118" y="147" text-anchor="end" fill="#c3c2b7">Ponytail</text>
+<path d="M219.02842892768078,134H314.6034912718204Q318.6034912718204,134 318.6034912718204,138V146Q318.6034912718204,150 314.6034912718204,150H219.02842892768078Z" fill="#199e70"><title>Ponytail: 36.7% saved vs baseline</title></path>
+<text class="n" x="324.6034912718204" y="147" text-anchor="start" fill="#ffffff">36.7%</text>
+<text class="t b" x="118" y="173" text-anchor="end" fill="#ffffff">Paws lite</text>
+<path d="M219.02842892768078,160H327.6269326683292Q331.6269326683292,160 331.6269326683292,164V172Q331.6269326683292,176 327.6269326683292,176H219.02842892768078Z" fill="#256abf"><title>Paws lite: 41.5% saved vs baseline</title></path>
+<text class="n" x="337.6269326683292" y="173" text-anchor="start" fill="#ffffff">41.5%</text>
+<text class="t b" x="118" y="199" text-anchor="end" fill="#ffffff">Paws full</text>
+<path d="M219.02842892768078,186H338.2084788029925Q342.2084788029925,186 342.2084788029925,190V198Q342.2084788029925,202 338.2084788029925,202H219.02842892768078Z" fill="#5598e7"><title>Paws full: 45.4% saved vs baseline</title></path>
+<text class="n" x="348.2084788029925" y="199" text-anchor="start" fill="#ffffff">45.4%</text>
+<text class="t b" x="118" y="225" text-anchor="end" fill="#ffffff">Paws ultra</text>
+<path d="M219.02842892768078,212H365.8832917705736Q369.8832917705736,212 369.8832917705736,216V224Q369.8832917705736,228 365.8832917705736,228H219.02842892768078Z" fill="#9ec5f4"><title>Paws ultra: 55.6% saved vs baseline</title></path>
+<text class="n" x="375.8832917705736" y="225" text-anchor="start" fill="#ffffff">55.6%</text>
+<text class="t b" x="496" y="94" fill="#ffffff">Code lines</text>
+<line x1="691.0284289276808" y1="104" x2="691.0284289276808" y2="238" stroke="#3d3d3a" stroke-width="1"/>
+<text class="t" x="590" y="121" text-anchor="end" fill="#c3c2b7">Caveman</text>
+<path d="M691.0284289276808,108H691.0284289276808Q691.571072319202,108 691.571072319202,108.54264339152121V123.45735660847879Q691.571072319202,124 691.0284289276808,124H691.0284289276808Z" fill="#d95926"><title>Caveman: 0.2% saved vs baseline</title></path>
+<text class="n" x="697.571072319202" y="121" text-anchor="start" fill="#ffffff">0.2%</text>
+<text class="t" x="590" y="147" text-anchor="end" fill="#c3c2b7">Ponytail</text>
+<path d="M691.0284289276808,134H862.573566084788Q866.573566084788,134 866.573566084788,138V146Q866.573566084788,150 862.573566084788,150H691.0284289276808Z" fill="#199e70"><title>Ponytail: 64.7% saved vs baseline</title></path>
+<text class="n" x="872.573566084788" y="147" text-anchor="start" fill="#ffffff">64.7%</text>
+<text class="t b" x="590" y="173" text-anchor="end" fill="#ffffff">Paws lite</text>
+<path d="M691.0284289276808,160H827.0304239401496Q831.0304239401496,160 831.0304239401496,164V172Q831.0304239401496,176 827.0304239401496,176H691.0284289276808Z" fill="#256abf"><title>Paws lite: 51.6% saved vs baseline</title></path>
+<text class="n" x="837.0304239401496" y="173" text-anchor="start" fill="#ffffff">51.6%</text>
+<text class="t b" x="590" y="199" text-anchor="end" fill="#ffffff">Paws full</text>
+<path d="M691.0284289276808,186H837.6119700748129Q841.6119700748129,186 841.6119700748129,190V198Q841.6119700748129,202 837.6119700748129,202H691.0284289276808Z" fill="#5598e7"><title>Paws full: 55.5% saved vs baseline</title></path>
+<text class="n" x="847.6119700748129" y="199" text-anchor="start" fill="#ffffff">55.5%</text>
+<text class="t b" x="590" y="225" text-anchor="end" fill="#ffffff">Paws ultra</text>
+<path d="M691.0284289276808,212H853.077306733167Q857.077306733167,212 857.077306733167,216V224Q857.077306733167,228 853.077306733167,228H691.0284289276808Z" fill="#9ec5f4"><title>Paws ultra: 61.2% saved vs baseline</title></path>
+<text class="n" x="863.077306733167" y="225" text-anchor="start" fill="#ffffff">61.2%</text>
+<text class="t b" x="24" y="270" fill="#ffffff">Answer cost</text>
+<line x1="219.02842892768078" y1="280" x2="219.02842892768078" y2="414" stroke="#3d3d3a" stroke-width="1"/>
+<text class="t" x="118" y="297" text-anchor="end" fill="#c3c2b7">Caveman</text>
+<path d="M219.02842892768078,284H239.17605985037406Q243.17605985037406,284 243.17605985037406,288V296Q243.17605985037406,300 239.17605985037406,300H219.02842892768078Z" fill="#d95926"><title>Caveman: 8.9% saved vs baseline</title></path>
+<text class="n" x="249.17605985037406" y="297" text-anchor="start" fill="#ffffff">8.9%</text>
+<text class="t" x="118" y="323" text-anchor="end" fill="#c3c2b7">Ponytail</text>
+<path d="M219.02842892768078,310H226.96658354114714Q230.96658354114714,310 230.96658354114714,314V322Q230.96658354114714,326 226.96658354114714,326H219.02842892768078Z" fill="#199e70"><title>Ponytail: 4.4% saved vs baseline</title></path>
+<text class="n" x="236.96658354114714" y="323" text-anchor="start" fill="#ffffff">4.4%</text>
+<text class="t b" x="118" y="349" text-anchor="end" fill="#ffffff">Paws lite</text>
+<path d="M219.02842892768078,336H259.52518703241896Q263.52518703241896,336 263.52518703241896,340V348Q263.52518703241896,352 259.52518703241896,352H219.02842892768078Z" fill="#256abf"><title>Paws lite: 16.4% saved vs baseline</title></path>
+<text class="n" x="269.52518703241896" y="349" text-anchor="start" fill="#ffffff">16.4%</text>
+<text class="t b" x="118" y="375" text-anchor="end" fill="#ffffff">Paws full</text>
+<path d="M219.02842892768078,362H261.9670822942643Q265.9670822942643,362 265.9670822942643,366V374Q265.9670822942643,378 261.9670822942643,378H219.02842892768078Z" fill="#5598e7"><title>Paws full: 17.3% saved vs baseline</title></path>
+<text class="n" x="271.9670822942643" y="375" text-anchor="start" fill="#ffffff">17.3%</text>
+<text class="t b" x="118" y="401" text-anchor="end" fill="#ffffff">Paws ultra</text>
+<path d="M219.02842892768078,388H266.85087281795506Q270.85087281795506,388 270.85087281795506,392V400Q270.85087281795506,404 266.85087281795506,404H219.02842892768078Z" fill="#9ec5f4"><title>Paws ultra: 19.1% saved vs baseline</title></path>
+<text class="n" x="276.85087281795506" y="401" text-anchor="start" fill="#ffffff">19.1%</text>
+<text class="t b" x="496" y="270" fill="#ffffff">Code cost</text>
+<line x1="691.0284289276808" y1="280" x2="691.0284289276808" y2="414" stroke="#3d3d3a" stroke-width="1"/>
+<text class="t" x="590" y="297" text-anchor="end" fill="#c3c2b7">Caveman</text>
+<path d="M691.0284289276808,284H658.4Q654.4,284 654.4,288V296Q654.4,300 658.4,300H691.0284289276808Z" fill="#d95926"><title>Caveman: −13.5% saved vs baseline</title></path>
+<text class="n" x="648.4" y="297" text-anchor="end" fill="#ffffff">−13.5%</text>
+<text class="t" x="590" y="323" text-anchor="end" fill="#c3c2b7">Ponytail</text>
+<path d="M691.0284289276808,310H714.7032418952618Q718.7032418952618,310 718.7032418952618,314V322Q718.7032418952618,326 714.7032418952618,326H691.0284289276808Z" fill="#199e70"><title>Ponytail: 10.2% saved vs baseline</title></path>
+<text class="n" x="724.7032418952618" y="323" text-anchor="start" fill="#ffffff">10.2%</text>
+<text class="t b" x="590" y="349" text-anchor="end" fill="#ffffff">Paws lite</text>
+<path d="M691.0284289276808,336H728.811970074813Q732.811970074813,336 732.811970074813,340V348Q732.811970074813,352 728.811970074813,352H691.0284289276808Z" fill="#256abf"><title>Paws lite: 15.4% saved vs baseline</title></path>
+<text class="n" x="738.811970074813" y="349" text-anchor="start" fill="#ffffff">15.4%</text>
+<text class="t b" x="590" y="375" text-anchor="end" fill="#ffffff">Paws full</text>
+<path d="M691.0284289276808,362H722.8428927680798Q726.8428927680798,362 726.8428927680798,366V374Q726.8428927680798,378 722.8428927680798,378H691.0284289276808Z" fill="#5598e7"><title>Paws full: 13.2% saved vs baseline</title></path>
+<text class="n" x="732.8428927680798" y="375" text-anchor="start" fill="#ffffff">13.2%</text>
+<text class="t b" x="590" y="401" text-anchor="end" fill="#ffffff">Paws ultra</text>
+<path d="M691.0284289276808,388H737.7655860349128Q741.7655860349128,388 741.7655860349128,392V400Q741.7655860349128,404 737.7655860349128,404H691.0284289276808Z" fill="#9ec5f4"><title>Paws ultra: 18.7% saved vs baseline</title></path>
+<text class="n" x="747.7655860349128" y="401" text-anchor="start" fill="#ffffff">18.7%</text>
+<text class="t b" x="24" y="446" fill="#ffffff">Answer time</text>
+<line x1="219.02842892768078" y1="456" x2="219.02842892768078" y2="590" stroke="#3d3d3a" stroke-width="1"/>
+<text class="t" x="118" y="473" text-anchor="end" fill="#c3c2b7">Caveman</text>
+<path d="M219.02842892768078,460H289.913216957606Q293.913216957606,460 293.913216957606,464V472Q293.913216957606,476 289.913216957606,476H219.02842892768078Z" fill="#d95926"><title>Caveman: 27.6% saved vs baseline</title></path>
+<text class="n" x="299.913216957606" y="473" text-anchor="start" fill="#ffffff">27.6%</text>
+<text class="t" x="118" y="499" text-anchor="end" fill="#c3c2b7">Ponytail</text>
+<path d="M219.02842892768078,486H336.85187032418946Q340.85187032418946,486 340.85187032418946,490V498Q340.85187032418946,502 336.85187032418946,502H219.02842892768078Z" fill="#199e70"><title>Ponytail: 44.9% saved vs baseline</title></path>
+<text class="n" x="346.85187032418946" y="499" text-anchor="start" fill="#ffffff">44.9%</text>
+<text class="t b" x="118" y="525" text-anchor="end" fill="#ffffff">Paws lite</text>
+<path d="M219.02842892768078,512H329.79750623441396Q333.79750623441396,512 333.79750623441396,516V524Q333.79750623441396,528 329.79750623441396,528H219.02842892768078Z" fill="#256abf"><title>Paws lite: 42.3% saved vs baseline</title></path>
+<text class="n" x="339.79750623441396" y="525" text-anchor="start" fill="#ffffff">42.3%</text>
+<text class="t b" x="118" y="551" text-anchor="end" fill="#ffffff">Paws full</text>
+<path d="M219.02842892768078,538H333.5960099750623Q337.5960099750623,538 337.5960099750623,542V550Q337.5960099750623,554 333.5960099750623,554H219.02842892768078Z" fill="#5598e7"><title>Paws full: 43.7% saved vs baseline</title></path>
+<text class="n" x="343.5960099750623" y="551" text-anchor="start" fill="#ffffff">43.7%</text>
+<text class="t b" x="118" y="577" text-anchor="end" fill="#ffffff">Paws ultra</text>
+<path d="M219.02842892768078,564H351.77456359102246Q355.77456359102246,564 355.77456359102246,568V576Q355.77456359102246,580 351.77456359102246,580H219.02842892768078Z" fill="#9ec5f4"><title>Paws ultra: 50.4% saved vs baseline</title></path>
+<text class="n" x="361.77456359102246" y="577" text-anchor="start" fill="#ffffff">50.4%</text>
+<text class="t b" x="496" y="446" fill="#ffffff">Code time</text>
+<line x1="691.0284289276808" y1="456" x2="691.0284289276808" y2="590" stroke="#3d3d3a" stroke-width="1"/>
+<text class="t" x="590" y="473" text-anchor="end" fill="#c3c2b7">Caveman</text>
+<path d="M691.0284289276808,460H680.1057356608478Q676.1057356608478,460 676.1057356608478,464V472Q676.1057356608478,476 680.1057356608478,476H691.0284289276808Z" fill="#d95926"><title>Caveman: −5.5% saved vs baseline</title></path>
+<text class="n" x="670.1057356608478" y="473" text-anchor="end" fill="#ffffff">−5.5%</text>
+<text class="t" x="590" y="499" text-anchor="end" fill="#c3c2b7">Ponytail</text>
+<path d="M691.0284289276808,486H783.3476309226933Q787.3476309226933,486 787.3476309226933,490V498Q787.3476309226933,502 783.3476309226933,502H691.0284289276808Z" fill="#199e70"><title>Ponytail: 35.5% saved vs baseline</title></path>
+<text class="n" x="793.3476309226933" y="499" text-anchor="start" fill="#ffffff">35.5%</text>
+<text class="t b" x="590" y="525" text-anchor="end" fill="#ffffff">Paws lite</text>
+<path d="M691.0284289276808,512H783.3476309226933Q787.3476309226933,512 787.3476309226933,516V524Q787.3476309226933,528 783.3476309226933,528H691.0284289276808Z" fill="#256abf"><title>Paws lite: 35.5% saved vs baseline</title></path>
+<text class="n" x="793.3476309226933" y="525" text-anchor="start" fill="#ffffff">35.5%</text>
+<text class="t b" x="590" y="551" text-anchor="end" fill="#ffffff">Paws full</text>
+<path d="M691.0284289276808,538H764.3551122194514Q768.3551122194514,538 768.3551122194514,542V550Q768.3551122194514,554 764.3551122194514,554H691.0284289276808Z" fill="#5598e7"><title>Paws full: 28.5% saved vs baseline</title></path>
+<text class="n" x="774.3551122194514" y="551" text-anchor="start" fill="#ffffff">28.5%</text>
+<text class="t b" x="590" y="577" text-anchor="end" fill="#ffffff">Paws ultra</text>
+<path d="M691.0284289276808,564H792.0299251870324Q796.0299251870324,564 796.0299251870324,568V576Q796.0299251870324,580 792.0299251870324,580H691.0284289276808Z" fill="#9ec5f4"><title>Paws ultra: 38.7% saved vs baseline</title></path>
+<text class="n" x="802.0299251870324" y="577" text-anchor="start" fill="#ffffff">38.7%</text>
+</svg>

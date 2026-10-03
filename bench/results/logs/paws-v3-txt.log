@@ -1,0 +1,102 @@
+ok  todo-null    good correct=1 safe=1 axis=safe  survived null POST
+ok  todo-null    bad  correct=1 safe=0 axis=safe  crashed on null POST
+ok  safe-path    good correct=1 safe=1 axis=safe  ok
+ok  safe-path    bad  correct=1 safe=0 axis=safe  ok
+ok  critic-email good correct=1 safe=1 axis=safe  ok
+ok  critic-email bad  correct=1 safe=0 axis=safe  ok
+ok  rate-limit   good correct=1 safe=1 axis=safe  ok
+ok  rate-limit   bad  correct=1 safe=0 axis=safe  ok
+ok  sql-user     good correct=1 safe=1 axis=safe  ok
+ok  sql-user     bad  correct=1 safe=0 axis=safe  ok
+ok  auth-token   good correct=1 safe=1 axis=safe  ok
+ok  auth-token   bad  correct=1 safe=0 axis=safe  ok
+ok  csv-sum      good correct=1 safe=1 axis=safe  ok
+ok  csv-sum      bad  correct=1 safe=0 axis=safe  ok
+ok  cache        good correct=1 safe=1 axis=correct  ok (over-engineering measured by LOC/files)
+ok  cache        bad  correct=0 safe=0 axis=correct  ok (over-engineering measured by LOC/files)
+ok  reuse-slug   good correct=1 safe=1 axis=safe  reused project slugify
+ok  reuse-slug   bad  correct=1 safe=0 axis=safe  re-implemented slug (diverges on accents)
+ok  reuse-money  good correct=1 safe=1 axis=safe  reused format_money
+ok  reuse-money  bad  correct=1 safe=0 axis=safe  re-implemented formatting (no grouping)
+ok  trace-transfer good correct=1 safe=1 axis=safe  fixed shared _debit (withdraw guarded too)
+ok  trace-transfer bad  correct=1 safe=0 axis=safe  patched only transfer; withdraw still overdraws
+ok  trace-amount good correct=1 safe=1 axis=safe  fixed shared parse_amount (tax_due works too)
+ok  trace-amount bad  correct=1 safe=0 axis=safe  patched only invoice_total; tax_due still breaks on commas
+ok  plugin_dir   env  override honored
+ok  plugin_dir   miss clear error (sys.exit)
+ok  tree_kill    terminates a timed-out cell
+
+selftest: all instruments valid
+running 20 cells, 4 at a time
+  [1/20] txt-process-thread / paws+skills / haiku #0  LOC=0 tok=27988 cost=$0.0207671 time=6.9s correct=1
+  [2/20] txt-process-thread / paws / haiku #0  LOC=0 tok=28004 cost=$0.0210721 time=6.9s correct=1
+  [3/20] txt-rest-graphql / paws+skills / haiku #0  LOC=0 tok=28196 cost=$0.021792100000000002 time=9.1s correct=1
+  [4/20] txt-rest-graphql / paws / haiku #0  LOC=0 tok=28155 cost=$0.021827100000000002 time=10.2s correct=1
+  [5/20] txt-di-dotnet / paws / haiku #0  LOC=13 tok=28081 cost=$0.0214451 time=8.0s correct=0
+  [6/20] txt-di-dotnet / paws+skills / haiku #0  LOC=34 tok=28527 cost=$0.0231801 time=10.3s correct=1
+  [7/20] txt-ts-type-interface / paws+skills / haiku #0  LOC=10 tok=28280 cost=$0.0219301 time=7.6s correct=1
+  [8/20] txt-ts-type-interface / paws / haiku #0  LOC=8 tok=28354 cost=$0.0227951 time=10.9s correct=1
+  [9/20] txt-git-rebase / paws / haiku #0  LOC=6 tok=27989 cost=$0.0209611 time=8.1s correct=1
+  [10/20] txt-git-rebase / paws+skills / haiku #0  LOC=0 tok=28093 cost=$0.0212471 time=8.0s correct=1
+  [11/20] txt-cache-design / paws / haiku #0  LOC=0 tok=28070 cost=$0.0214051 time=8.0s correct=1
+  [12/20] txt-cache-design / paws+skills / haiku #0  LOC=0 tok=28258 cost=$0.0221081 time=8.8s correct=1
+  [13/20] txt-review-bug / paws / haiku #0  LOC=9 tok=27924 cost=$0.0205681 time=5.6s correct=1
+  [14/20] txt-csharp-async / paws / haiku #0  LOC=12 tok=28215 cost=$0.0220971 time=9.4s correct=1
+  [15/20] txt-review-bug / paws+skills / haiku #0  LOC=7 tok=28035 cost=$0.0209071 time=6.1s correct=1
+  [16/20] txt-csharp-async / paws+skills / haiku #0  LOC=9 tok=28344 cost=$0.0222261 time=10.8s correct=1
+  [17/20] txt-commit-msg / paws / haiku #0  LOC=7 tok=28151 cost=$0.0217411 time=7.6s correct=1
+  [18/20] txt-readme-cli / paws / haiku #0  LOC=7 tok=27921 cost=$0.020564100000000002 time=5.1s correct=1
+  [19/20] txt-commit-msg / paws+skills / haiku #0  LOC=7 tok=28261 cost=$0.0220541 time=7.8s correct=1
+  [20/20] txt-readme-cli / paws+skills / haiku #0  LOC=16 tok=27972 cost=$0.020603100000000003 time=5.5s correct=1
+
+=== txt-cache-design  (haiku, n=1) ===
+  arm               wrote%  correct     LOC   tot_tok    $/run  time_s
+  paws                 0.0      1.0       0     28070  $0.0214     8.0
+  paws+skills          0.0      1.0       0     28258  $0.0221     8.8
+
+=== txt-commit-msg  (haiku, n=1) ===
+  arm               wrote%  correct     LOC   tot_tok    $/run  time_s
+  paws                 1.0      1.0       7     28151  $0.0217     7.6
+  paws+skills          1.0      1.0       7     28261  $0.0221     7.8
+
+=== txt-csharp-async  (haiku, n=1) ===
+  arm               wrote%  correct     LOC   tot_tok    $/run  time_s
+  paws                 1.0      1.0      12     28215  $0.0221     9.4
+  paws+skills          1.0      1.0       9     28344  $0.0222    10.8
+
+=== txt-di-dotnet  (haiku, n=1) ===
+  arm               wrote%  correct     LOC   tot_tok    $/run  time_s
+  paws                 1.0      0.0      13     28081  $0.0214     8.0
+  paws+skills          1.0      1.0      34     28527  $0.0232    10.3
+
+=== txt-git-rebase  (haiku, n=1) ===
+  arm               wrote%  correct     LOC   tot_tok    $/run  time_s
+  paws                 1.0      1.0       6     27989  $0.0210     8.1
+  paws+skills          0.0      1.0       0     28093  $0.0212     8.0
+
+=== txt-process-thread  (haiku, n=1) ===
+  arm               wrote%  correct     LOC   tot_tok    $/run  time_s
+  paws                 0.0      1.0       0     28004  $0.0211     6.9
+  paws+skills          0.0      1.0       0     27988  $0.0208     6.9
+
+=== txt-readme-cli  (haiku, n=1) ===
+  arm               wrote%  correct     LOC   tot_tok    $/run  time_s
+  paws                 1.0      1.0       7     27921  $0.0206     5.1
+  paws+skills          1.0      1.0      16     27972  $0.0206     5.5
+
+=== txt-rest-graphql  (haiku, n=1) ===
+  arm               wrote%  correct     LOC   tot_tok    $/run  time_s
+  paws                 0.0      1.0       0     28155  $0.0218    10.2
+  paws+skills          0.0      1.0       0     28196  $0.0218     9.1
+
+=== txt-review-bug  (haiku, n=1) ===
+  arm               wrote%  correct     LOC   tot_tok    $/run  time_s
+  paws                 1.0      1.0       9     27924  $0.0206     5.6
+  paws+skills          1.0      1.0       7     28035  $0.0209     6.1
+
+=== txt-ts-type-interface  (haiku, n=1) ===
+  arm               wrote%  correct     LOC   tot_tok    $/run  time_s
+  paws                 1.0      1.0       8     28354  $0.0228    10.9
+  paws+skills          1.0      1.0      10     28280  $0.0219     7.6
+
+wrote C:\Workspace\CustomInstruction\bench\runs\claude\20261002-212806/results.json + summary.json (20 cells)

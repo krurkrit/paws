@@ -1,0 +1,92 @@
+ok  todo-null    good correct=1 safe=1 axis=safe  survived null POST
+ok  todo-null    bad  correct=1 safe=0 axis=safe  crashed on null POST
+ok  safe-path    good correct=1 safe=1 axis=safe  ok
+ok  safe-path    bad  correct=1 safe=0 axis=safe  ok
+ok  critic-email good correct=1 safe=1 axis=safe  ok
+ok  critic-email bad  correct=1 safe=0 axis=safe  ok
+ok  rate-limit   good correct=1 safe=1 axis=safe  ok
+ok  rate-limit   bad  correct=1 safe=0 axis=safe  ok
+ok  sql-user     good correct=1 safe=1 axis=safe  ok
+ok  sql-user     bad  correct=1 safe=0 axis=safe  ok
+ok  auth-token   good correct=1 safe=1 axis=safe  ok
+ok  auth-token   bad  correct=1 safe=0 axis=safe  ok
+ok  csv-sum      good correct=1 safe=1 axis=safe  ok
+ok  csv-sum      bad  correct=1 safe=0 axis=safe  ok
+ok  cache        good correct=1 safe=1 axis=correct  ok (over-engineering measured by LOC/files)
+ok  cache        bad  correct=0 safe=0 axis=correct  ok (over-engineering measured by LOC/files)
+ok  reuse-slug   good correct=1 safe=1 axis=safe  reused project slugify
+ok  reuse-slug   bad  correct=1 safe=0 axis=safe  re-implemented slug (diverges on accents)
+ok  reuse-money  good correct=1 safe=1 axis=safe  reused format_money
+ok  reuse-money  bad  correct=1 safe=0 axis=safe  re-implemented formatting (no grouping)
+ok  trace-transfer good correct=1 safe=1 axis=safe  fixed shared _debit (withdraw guarded too)
+ok  trace-transfer bad  correct=1 safe=0 axis=safe  patched only transfer; withdraw still overdraws
+ok  trace-amount good correct=1 safe=1 axis=safe  fixed shared parse_amount (tax_due works too)
+ok  trace-amount bad  correct=1 safe=0 axis=safe  patched only invoice_total; tax_due still breaks on commas
+ok  plugin_dir   env  override honored
+ok  plugin_dir   miss clear error (sys.exit)
+ok  tree_kill    terminates a timed-out cell
+
+selftest: all instruments valid
+running 12 cells, 4 at a time
+  [1/12] cs-todo-api / paws / haiku #0  LOC=58 tok=86079 cost=$0.0708344 time=14.7s correct=1
+  [2/12] cs-csvsales / paws / haiku #0  LOC=19 tok=114115 cost=$0.07151709999999999 time=16.7s correct=1
+  [3/12] cs-validation / paws / haiku #0  LOC=70 tok=57909 cost=$0.0308862 time=14.1s correct=1
+  [4/12] cs-repo / paws / haiku #0  LOC=45 tok=58276 cost=$0.032163699999999996 time=15.3s correct=1
+  [5/12] cs-ratelimit / paws / haiku #0  LOC=35 tok=58674 cost=$0.0333378 time=16.9s correct=1
+  [6/12] cs-logger / paws / haiku #0  LOC=42 tok=56957 cost=$0.027429000000000002 time=10.1s correct=1
+  [7/12] ts-api-client / paws / haiku #0  LOC=88 tok=57806 cost=$0.0306467 time=11.4s correct=1
+  [8/12] ts-todo-component / paws / haiku #0  LOC=91 tok=57710 cost=$0.030077499999999997 time=12.0s correct=1
+  [9/12] ts-emitter / paws / haiku #0  LOC=31 tok=56930 cost=$0.0274789 time=10.5s correct=1
+  [10/12] ts-hooks / paws / haiku #0  LOC=39 tok=113892 cost=$0.035682 time=14.9s correct=1
+  [11/12] ts-formvalidate / paws / haiku #0  LOC=76 tok=59814 cost=$0.0376335 time=15.8s correct=1
+  [12/12] ts-pagination / paws / haiku #0  LOC=142 tok=87244 cost=$0.0390883 time=21.6s correct=1
+
+=== cs-csvsales  (haiku, n=1) ===
+  arm               wrote%  correct     LOC   tot_tok    $/run  time_s
+  paws                 1.0      1.0      19    114115  $0.0715    16.7
+
+=== cs-logger  (haiku, n=1) ===
+  arm               wrote%  correct     LOC   tot_tok    $/run  time_s
+  paws                 1.0      1.0      42     56957  $0.0274    10.1
+
+=== cs-ratelimit  (haiku, n=1) ===
+  arm               wrote%  correct     LOC   tot_tok    $/run  time_s
+  paws                 1.0      1.0      35     58674  $0.0333    16.9
+
+=== cs-repo  (haiku, n=1) ===
+  arm               wrote%  correct     LOC   tot_tok    $/run  time_s
+  paws                 1.0      1.0      45     58276  $0.0322    15.3
+
+=== cs-todo-api  (haiku, n=1) ===
+  arm               wrote%  correct     LOC   tot_tok    $/run  time_s
+  paws                 1.0      1.0      58     86079  $0.0708    14.7
+
+=== cs-validation  (haiku, n=1) ===
+  arm               wrote%  correct     LOC   tot_tok    $/run  time_s
+  paws                 1.0      1.0      70     57909  $0.0309    14.1
+
+=== ts-api-client  (haiku, n=1) ===
+  arm               wrote%  correct     LOC   tot_tok    $/run  time_s
+  paws                 1.0      1.0      88     57806  $0.0306    11.4
+
+=== ts-emitter  (haiku, n=1) ===
+  arm               wrote%  correct     LOC   tot_tok    $/run  time_s
+  paws                 1.0      1.0      31     56930  $0.0275    10.5
+
+=== ts-formvalidate  (haiku, n=1) ===
+  arm               wrote%  correct     LOC   tot_tok    $/run  time_s
+  paws                 1.0      1.0      76     59814  $0.0376    15.8
+
+=== ts-hooks  (haiku, n=1) ===
+  arm               wrote%  correct     LOC   tot_tok    $/run  time_s
+  paws                 1.0      1.0      39    113892  $0.0357    14.9
+
+=== ts-pagination  (haiku, n=1) ===
+  arm               wrote%  correct     LOC   tot_tok    $/run  time_s
+  paws                 1.0      1.0     142     87244  $0.0391    21.6
+
+=== ts-todo-component  (haiku, n=1) ===
+  arm               wrote%  correct     LOC   tot_tok    $/run  time_s
+  paws                 1.0      1.0      91     57710  $0.0301    12.0
+
+wrote C:\Workspace\CustomInstruction\bench\runs\claude\20261002-205034/results.json + summary.json (12 cells)

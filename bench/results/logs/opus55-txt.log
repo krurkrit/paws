@@ -1,0 +1,182 @@
+ok  todo-null    good correct=1 safe=1 axis=safe  survived null POST
+ok  todo-null    bad  correct=1 safe=0 axis=safe  crashed on null POST
+ok  safe-path    good correct=1 safe=1 axis=safe  ok
+ok  safe-path    bad  correct=1 safe=0 axis=safe  ok
+ok  critic-email good correct=1 safe=1 axis=safe  ok
+ok  critic-email bad  correct=1 safe=0 axis=safe  ok
+ok  rate-limit   good correct=1 safe=1 axis=safe  ok
+ok  rate-limit   bad  correct=1 safe=0 axis=safe  ok
+ok  sql-user     good correct=1 safe=1 axis=safe  ok
+ok  sql-user     bad  correct=1 safe=0 axis=safe  ok
+ok  auth-token   good correct=1 safe=1 axis=safe  ok
+ok  auth-token   bad  correct=1 safe=0 axis=safe  ok
+ok  csv-sum      good correct=1 safe=1 axis=safe  ok
+ok  csv-sum      bad  correct=1 safe=0 axis=safe  ok
+ok  cache        good correct=1 safe=1 axis=correct  ok (over-engineering measured by LOC/files)
+ok  cache        bad  correct=0 safe=0 axis=correct  ok (over-engineering measured by LOC/files)
+ok  reuse-slug   good correct=1 safe=1 axis=safe  reused project slugify
+ok  reuse-slug   bad  correct=1 safe=0 axis=safe  re-implemented slug (diverges on accents)
+ok  reuse-money  good correct=1 safe=1 axis=safe  reused format_money
+ok  reuse-money  bad  correct=1 safe=0 axis=safe  re-implemented formatting (no grouping)
+ok  trace-transfer good correct=1 safe=1 axis=safe  fixed shared _debit (withdraw guarded too)
+ok  trace-transfer bad  correct=1 safe=0 axis=safe  patched only transfer; withdraw still overdraws
+ok  trace-amount good correct=1 safe=1 axis=safe  fixed shared parse_amount (tax_due works too)
+ok  trace-amount bad  correct=1 safe=0 axis=safe  patched only invoice_total; tax_due still breaks on commas
+ok  plugin_dir   env  override honored
+ok  plugin_dir   miss clear error (sys.exit)
+ok  tree_kill    terminates a timed-out cell
+
+selftest: all instruments valid
+running 60 cells, 4 at a time
+  [1/60] txt-process-thread / caveman / opus55 #0  LOC=0 tok=28228 cost=$0.0749664 time=7.4s correct=1
+  [2/60] txt-process-thread / ponytail / opus55 #0  LOC=0 tok=29250 cost=$0.0843064 time=7.9s correct=1
+  [3/60] txt-process-thread / paws-lite / opus55 #0  LOC=0 tok=27821 cost=$0.0729224 time=8.5s correct=1
+  [4/60] txt-process-thread / baseline / opus55 #0  LOC=0 tok=27108 cost=$0.0698704 time=10.5s correct=1
+  [5/60] txt-process-thread / paws / opus55 #0  LOC=0 tok=27716 cost=$0.0710504 time=7.3s correct=1
+  [6/60] txt-process-thread / paws-ultra / opus55 #0  LOC=0 tok=27660 cost=$0.0697024 time=6.7s correct=1
+  [7/60] txt-rest-graphql / caveman / opus55 #0  LOC=10 tok=28859 cost=$0.0874544 time=12.8s correct=1
+  [8/60] txt-rest-graphql / baseline / opus55 #0  LOC=14 tok=28018 cost=$0.0879384 time=21.6s correct=1
+  [9/60] txt-rest-graphql / ponytail / opus55 #0  LOC=9 tok=29703 cost=$0.0932944 time=13.0s correct=1
+  [10/60] txt-rest-graphql / paws-lite / opus55 #0  LOC=0 tok=28381 cost=$0.0839664 time=15.6s correct=1
+  [11/60] txt-rest-graphql / paws / opus55 #0  LOC=0 tok=28225 cost=$0.0811224 time=12.7s correct=1
+  [12/60] txt-rest-graphql / paws-ultra / opus55 #0  LOC=0 tok=28023 cost=$0.0768064 time=10.1s correct=1
+  [13/60] txt-di-dotnet / caveman / opus55 #0  LOC=14 tok=29735 cost=$0.1049384 time=19.8s correct=1
+  [14/60] txt-di-dotnet / baseline / opus55 #0  LOC=49 tok=28834 cost=$0.1042344 time=23.3s correct=1
+  [15/60] txt-di-dotnet / ponytail / opus55 #0  LOC=13 tok=30528 cost=$0.1096984 time=19.2s correct=1
+  [16/60] txt-di-dotnet / paws-lite / opus55 #0  LOC=16 tok=29012 cost=$0.0966224 time=17.2s correct=1
+  [17/60] txt-di-dotnet / paws-ultra / opus55 #0  LOC=0 tok=28170 cost=$0.0797464 time=11.2s correct=1
+  [18/60] txt-ts-type-interface / baseline / opus55 #0  LOC=6 tok=27331 cost=$0.0741624 time=12.3s correct=1
+  [19/60] txt-di-dotnet / paws / opus55 #0  LOC=11 tok=28874 cost=$0.0940304 time=16.6s correct=1
+  [20/60] txt-ts-type-interface / caveman / opus55 #0  LOC=10 tok=28753 cost=$0.0852144 time=12.2s correct=1
+  [21/60] txt-ts-type-interface / ponytail / opus55 #0  LOC=11 tok=29378 cost=$0.0866984 time=12.2s correct=1
+  [22/60] txt-ts-type-interface / paws-ultra / opus55 #0  LOC=0 tok=27742 cost=$0.07110240000000001 time=6.6s correct=1
+  [23/60] txt-ts-type-interface / paws / opus55 #0  LOC=0 tok=27900 cost=$0.07451440000000001 time=8.8s correct=1
+  [24/60] txt-ts-type-interface / paws-lite / opus55 #0  LOC=1 tok=28046 cost=$0.0772304 time=9.5s correct=1
+  [25/60] txt-git-rebase / ponytail / opus55 #0  LOC=6 tok=29209 cost=$0.08336640000000001 time=7.9s correct=1
+  [26/60] txt-git-rebase / paws-lite / opus55 #0  LOC=0 tok=27873 cost=$0.07383039999999999 time=8.5s correct=1
+  [27/60] txt-git-rebase / baseline / opus55 #0  LOC=17 tok=27429 cost=$0.0761464 time=12.8s correct=1
+  [28/60] txt-git-rebase / caveman / opus55 #0  LOC=14 tok=28604 cost=$0.0823184 time=11.7s correct=1
+  [29/60] txt-git-rebase / paws / opus55 #0  LOC=5 tok=27920 cost=$0.0750104 time=9.5s correct=1
+  [30/60] txt-git-rebase / paws-ultra / opus55 #0  LOC=0 tok=27860 cost=$0.0735224 time=8.7s correct=1
+  [31/60] txt-cache-design / ponytail / opus55 #0  LOC=0 tok=29609 cost=$0.09147440000000001 time=12.9s correct=1
+  [32/60] txt-cache-design / caveman / opus55 #0  LOC=6 tok=29717 cost=$0.1046864 time=22.9s correct=1
+  [33/60] txt-cache-design / baseline / opus55 #0  LOC=2 tok=28276 cost=$0.0932424 time=23.7s correct=1
+  [34/60] txt-cache-design / paws-lite / opus55 #0  LOC=0 tok=28695 cost=$0.0903304 time=17.7s correct=1
+  [35/60] txt-cache-design / paws / opus55 #0  LOC=0 tok=28696 cost=$0.0905784 time=18.0s correct=1
+  [36/60] txt-cache-design / paws-ultra / opus55 #0  LOC=0 tok=28434 cost=$0.0850864 time=15.7s correct=1
+  [37/60] txt-csharp-async / caveman / opus55 #0  LOC=19 tok=29137 cost=$0.0930144 time=16.0s correct=1
+  [38/60] txt-csharp-async / baseline / opus55 #0  LOC=23 tok=28101 cost=$0.08956240000000001 time=21.3s correct=1
+  [39/60] txt-csharp-async / paws-ultra / opus55 #0  LOC=0 tok=27865 cost=$0.0736584 time=8.2s correct=1
+  [40/60] txt-csharp-async / paws-lite / opus55 #0  LOC=17 tok=28571 cost=$0.0878024 time=15.2s correct=1
+  [41/60] txt-csharp-async / ponytail / opus55 #0  LOC=20 tok=30095 cost=$0.1010864 time=16.2s correct=1
+  [42/60] txt-csharp-async / paws / opus55 #0  LOC=11 tok=28421 cost=$0.08501840000000001 time=15.9s correct=1
+  [43/60] txt-review-bug / ponytail / opus55 #0  LOC=6 tok=29067 cost=$0.0802624 time=5.7s correct=1
+  [44/60] txt-review-bug / baseline / opus55 #0  LOC=12 tok=26940 cost=$0.0660664 time=8.0s correct=1
+  [45/60] txt-review-bug / caveman / opus55 #0  LOC=9 tok=28213 cost=$0.0741504 time=8.5s correct=1
+  [46/60] txt-review-bug / paws-lite / opus55 #0  LOC=5 tok=27678 cost=$0.0696064 time=5.7s correct=1
+  [47/60] txt-review-bug / paws / opus55 #0  LOC=5 tok=27557 cost=$0.0674024 time=5.5s correct=1
+  [48/60] txt-commit-msg / caveman / opus55 #0  LOC=4 tok=27911 cost=$0.0682184 time=3.5s correct=1
+  [49/60] txt-commit-msg / baseline / opus55 #0  LOC=6 tok=26630 cost=$0.0599384 time=5.2s correct=1
+  [50/60] txt-review-bug / paws-ultra / opus55 #0  LOC=5 tok=27611 cost=$0.0682184 time=8.0s correct=1
+  [51/60] txt-commit-msg / ponytail / opus55 #0  LOC=3 tok=28774 cost=$0.07440240000000001 time=3.1s correct=1
+  [52/60] txt-commit-msg / paws / opus55 #0  LOC=3 tok=27357 cost=$0.0634624 time=3.3s correct=1
+  [53/60] txt-commit-msg / paws-lite / opus55 #0  LOC=5 tok=27454 cost=$0.06517440000000001 time=3.9s correct=1
+  [54/60] txt-commit-msg / paws-ultra / opus55 #0  LOC=3 tok=27386 cost=$0.0637664 time=3.3s correct=1
+  [55/60] txt-readme-cli / ponytail / opus55 #0  LOC=14 tok=29105 cost=$0.08095039999999999 time=5.6s correct=1
+  [56/60] txt-readme-cli / baseline / opus55 #0  LOC=36 tok=27119 cost=$0.06958639999999999 time=9.1s correct=1
+  [57/60] txt-readme-cli / paws-lite / opus55 #0  LOC=14 tok=27782 cost=$0.0716744 time=6.6s correct=1
+  [58/60] txt-readme-cli / caveman / opus55 #0  LOC=43 tok=28534 cost=$0.0805584 time=8.6s correct=1
+  [59/60] txt-readme-cli / paws / opus55 #0  LOC=11 tok=27818 cost=$0.0725864 time=7.0s correct=1
+  [60/60] txt-readme-cli / paws-ultra / opus55 #0  LOC=13 tok=27740 cost=$0.0707864 time=6.3s correct=1
+
+=== txt-cache-design  (opus55, n=1) ===
+  arm               wrote%  correct     LOC   tot_tok    $/run  time_s
+  baseline             1.0      1.0       2     28276  $0.0932    23.7
+  caveman              1.0      1.0       6     29717  $0.1047    22.9
+  paws                 0.0      1.0       0     28696  $0.0906    18.0
+  paws-lite            0.0      1.0       0     28695  $0.0903    17.7
+  paws-ultra           0.0      1.0       0     28434  $0.0851    15.7
+  ponytail             0.0      1.0       0     29609  $0.0915    12.9
+
+=== txt-commit-msg  (opus55, n=1) ===
+  arm               wrote%  correct     LOC   tot_tok    $/run  time_s
+  baseline             1.0      1.0       6     26630  $0.0599     5.2
+  caveman              1.0      1.0       4     27911  $0.0682     3.5
+  paws                 1.0      1.0       3     27357  $0.0635     3.3
+  paws-lite            1.0      1.0       5     27454  $0.0652     3.9
+  paws-ultra           1.0      1.0       3     27386  $0.0638     3.3
+  ponytail             1.0      1.0       3     28774  $0.0744     3.1
+
+=== txt-csharp-async  (opus55, n=1) ===
+  arm               wrote%  correct     LOC   tot_tok    $/run  time_s
+  baseline             1.0      1.0      23     28101  $0.0896    21.3
+  caveman              1.0      1.0      19     29137  $0.0930    16.0
+  paws                 1.0      1.0      11     28421  $0.0850    15.9
+  paws-lite            1.0      1.0      17     28571  $0.0878    15.2
+  paws-ultra           0.0      1.0       0     27865  $0.0737     8.2
+  ponytail             1.0      1.0      20     30095  $0.1011    16.2
+
+=== txt-di-dotnet  (opus55, n=1) ===
+  arm               wrote%  correct     LOC   tot_tok    $/run  time_s
+  baseline             1.0      1.0      49     28834  $0.1042    23.3
+  caveman              1.0      1.0      14     29735  $0.1049    19.8
+  paws                 1.0      1.0      11     28874  $0.0940    16.6
+  paws-lite            1.0      1.0      16     29012  $0.0966    17.2
+  paws-ultra           0.0      1.0       0     28170  $0.0797    11.2
+  ponytail             1.0      1.0      13     30528  $0.1097    19.2
+
+=== txt-git-rebase  (opus55, n=1) ===
+  arm               wrote%  correct     LOC   tot_tok    $/run  time_s
+  baseline             1.0      1.0      17     27429  $0.0761    12.8
+  caveman              1.0      1.0      14     28604  $0.0823    11.7
+  paws                 1.0      1.0       5     27920  $0.0750     9.5
+  paws-lite            0.0      1.0       0     27873  $0.0738     8.5
+  paws-ultra           0.0      1.0       0     27860  $0.0735     8.7
+  ponytail             1.0      1.0       6     29209  $0.0834     7.9
+
+=== txt-process-thread  (opus55, n=1) ===
+  arm               wrote%  correct     LOC   tot_tok    $/run  time_s
+  baseline             0.0      1.0       0     27108  $0.0699    10.5
+  caveman              0.0      1.0       0     28228  $0.0750     7.4
+  paws                 0.0      1.0       0     27716  $0.0711     7.3
+  paws-lite            0.0      1.0       0     27821  $0.0729     8.5
+  paws-ultra           0.0      1.0       0     27660  $0.0697     6.7
+  ponytail             0.0      1.0       0     29250  $0.0843     7.9
+
+=== txt-readme-cli  (opus55, n=1) ===
+  arm               wrote%  correct     LOC   tot_tok    $/run  time_s
+  baseline             1.0      1.0      36     27119  $0.0696     9.1
+  caveman              1.0      1.0      43     28534  $0.0806     8.6
+  paws                 1.0      1.0      11     27818  $0.0726     7.0
+  paws-lite            1.0      1.0      14     27782  $0.0717     6.6
+  paws-ultra           1.0      1.0      13     27740  $0.0708     6.3
+  ponytail             1.0      1.0      14     29105  $0.0810     5.6
+
+=== txt-rest-graphql  (opus55, n=1) ===
+  arm               wrote%  correct     LOC   tot_tok    $/run  time_s
+  baseline             1.0      1.0      14     28018  $0.0879    21.6
+  caveman              1.0      1.0      10     28859  $0.0875    12.8
+  paws                 0.0      1.0       0     28225  $0.0811    12.7
+  paws-lite            0.0      1.0       0     28381  $0.0840    15.6
+  paws-ultra           0.0      1.0       0     28023  $0.0768    10.1
+  ponytail             1.0      1.0       9     29703  $0.0933    13.0
+
+=== txt-review-bug  (opus55, n=1) ===
+  arm               wrote%  correct     LOC   tot_tok    $/run  time_s
+  baseline             1.0      1.0      12     26940  $0.0661     8.0
+  caveman              1.0      1.0       9     28213  $0.0742     8.5
+  paws                 1.0      1.0       5     27557  $0.0674     5.5
+  paws-lite            1.0      1.0       5     27678  $0.0696     5.7
+  paws-ultra           1.0      1.0       5     27611  $0.0682     8.0
+  ponytail             1.0      1.0       6     29067  $0.0803     5.7
+
+=== txt-ts-type-interface  (opus55, n=1) ===
+  arm               wrote%  correct     LOC   tot_tok    $/run  time_s
+  baseline             1.0      1.0       6     27331  $0.0742    12.3
+  caveman              1.0      1.0      10     28753  $0.0852    12.2
+  paws                 0.0      1.0       0     27900  $0.0745     8.8
+  paws-lite            1.0      1.0       1     28046  $0.0772     9.5
+  paws-ultra           0.0      1.0       0     27742  $0.0711     6.6
+  ponytail             1.0      1.0      11     29378  $0.0867    12.2
+
+wrote C:\Workspace\CustomInstruction\bench\runs\claude\20261003-071608/results.json + summary.json (60 cells)

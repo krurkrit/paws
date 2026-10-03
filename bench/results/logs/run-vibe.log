@@ -1,0 +1,188 @@
+ok  todo-null    good correct=1 safe=1 axis=safe  survived null POST
+ok  todo-null    bad  correct=1 safe=0 axis=safe  crashed on null POST
+ok  safe-path    good correct=1 safe=1 axis=safe  ok
+ok  safe-path    bad  correct=1 safe=0 axis=safe  ok
+ok  critic-email good correct=1 safe=1 axis=safe  ok
+ok  critic-email bad  correct=1 safe=0 axis=safe  ok
+ok  rate-limit   good correct=1 safe=1 axis=safe  ok
+ok  rate-limit   bad  correct=1 safe=0 axis=safe  ok
+ok  sql-user     good correct=1 safe=1 axis=safe  ok
+ok  sql-user     bad  correct=1 safe=0 axis=safe  ok
+ok  auth-token   good correct=1 safe=1 axis=safe  ok
+ok  auth-token   bad  correct=1 safe=0 axis=safe  ok
+ok  csv-sum      good correct=1 safe=1 axis=safe  ok
+ok  csv-sum      bad  correct=1 safe=0 axis=safe  ok
+ok  cache        good correct=1 safe=1 axis=correct  ok (over-engineering measured by LOC/files)
+ok  cache        bad  correct=0 safe=0 axis=correct  ok (over-engineering measured by LOC/files)
+ok  reuse-slug   good correct=1 safe=1 axis=safe  reused project slugify
+ok  reuse-slug   bad  correct=1 safe=0 axis=safe  re-implemented slug (diverges on accents)
+ok  reuse-money  good correct=1 safe=1 axis=safe  reused format_money
+ok  reuse-money  bad  correct=1 safe=0 axis=safe  re-implemented formatting (no grouping)
+ok  trace-transfer good correct=1 safe=1 axis=safe  fixed shared _debit (withdraw guarded too)
+ok  trace-transfer bad  correct=1 safe=0 axis=safe  patched only transfer; withdraw still overdraws
+ok  trace-amount good correct=1 safe=1 axis=safe  fixed shared parse_amount (tax_due works too)
+ok  trace-amount bad  correct=1 safe=0 axis=safe  patched only invoice_total; tax_due still breaks on commas
+ok  plugin_dir   env  override honored
+ok  plugin_dir   miss clear error (sys.exit)
+ok  tree_kill    terminates a timed-out cell
+
+selftest: all instruments valid
+running 60 cells, 4 at a time
+  [1/60] vibe-todo / cinder / haiku #0  LOC=110 tok=57871 cost=$0.0323605 time=15.6s correct=1
+  [2/60] vibe-todo / caveman / haiku #0  LOC=95 tok=59013 cost=$0.0334373 time=16.1s correct=1
+  [3/60] vibe-todo / baseline / haiku #0  LOC=108 tok=57505 cost=$0.0333708 time=19.4s correct=1
+  [4/60] vibe-todo / lantern / haiku #0  LOC=109 tok=59692 cost=$0.038408 time=21.8s correct=1
+  [5/60] vibe-todo / ponytail / haiku #0  LOC=63 tok=61295 cost=$0.0377426 time=15.8s correct=1
+  [6/60] vibe-password / cinder / haiku #0  LOC=67 tok=56971 cost=$0.029220799999999998 time=13.8s correct=1
+  [7/60] vibe-password / baseline / haiku #0  LOC=113 tok=57641 cost=$0.0338569 time=20.7s correct=1
+  [8/60] vibe-password / lantern / haiku #0  LOC=89 tok=57942 cost=$0.0323741 time=15.2s correct=1
+  [9/60] vibe-password / caveman / haiku #0  LOC=89 tok=58549 cost=$0.0315815 time=14.1s correct=1
+  [10/60] vibe-password / ponytail / haiku #0  LOC=58 tok=59661 cost=$0.0319974 time=13.0s correct=1
+  [11/60] vibe-shortener / cinder / haiku #0  LOC=69 tok=57481 cost=$0.0309641 time=15.2s correct=1
+  [12/60] vibe-shortener / baseline / haiku #0  LOC=126 tok=58199 cost=$0.035855399999999996 time=22.1s correct=1
+  [13/60] vibe-shortener / caveman / haiku #0  LOC=53 tok=57946 cost=$0.029619200000000002 time=11.6s correct=1
+  [14/60] vibe-shortener / lantern / haiku #0  LOC=97 tok=58288 cost=$0.0335071 time=18.4s correct=1
+  [15/60] vibe-shortener / ponytail / haiku #0  LOC=44 tok=61113 cost=$0.0372474 time=20.6s correct=1
+  [16/60] vibe-md2html / cinder / haiku #0  LOC=118 tok=58962 cost=$0.0360573 time=19.7s correct=1
+  [17/60] vibe-md2html / baseline / haiku #0  LOC=139 tok=58583 cost=$0.037275600000000006 time=23.7s correct=0
+  [18/60] vibe-md2html / lantern / haiku #0  LOC=157 tok=59891 cost=$0.0390191 time=23.4s correct=1
+  [19/60] vibe-csvstats / baseline / haiku #0  LOC=42 tok=55652 cost=$0.0265343 time=10.8s correct=1
+  [20/60] vibe-md2html / caveman / haiku #0  LOC=133 tok=60268 cost=$0.037818000000000004 time=21.1s correct=1
+  [21/60] vibe-csvstats / cinder / haiku #0  LOC=63 tok=56961 cost=$0.0288693 time=12.3s correct=1
+  [22/60] vibe-md2html / ponytail / haiku #0  LOC=55 tok=62397 cost=$0.0416348 time=25.1s correct=1
+  [23/60] vibe-csvstats / lantern / haiku #0  LOC=38 tok=56574 cost=$0.0272933 time=10.8s correct=1
+  [24/60] vibe-csvstats / caveman / haiku #0  LOC=39 tok=57772 cost=$0.0288579 time=11.3s correct=1
+  [25/60] vibe-langgraph / cinder / haiku #0  LOC=87 tok=57506 cost=$0.0310943 time=16.1s correct=1
+  [26/60] vibe-langgraph / baseline / haiku #0  LOC=86 tok=56811 cost=$0.030971000000000002 time=17.8s correct=1
+  [27/60] vibe-langgraph / lantern / haiku #0  LOC=91 tok=57773 cost=$0.0317476 time=16.9s correct=1
+  [28/60] vibe-csvstats / ponytail / haiku #0  LOC=30 tok=62933 cost=$0.0433317 time=25.0s correct=1
+  [29/60] vibe-langgraph / caveman / haiku #0  LOC=83 tok=58621 cost=$0.0318586 time=15.8s correct=1
+  [30/60] vibe-langgraph / ponytail / haiku #0  LOC=45 tok=59679 cost=$0.0322532 time=16.2s correct=1
+  [31/60] vibe-restapi / baseline / haiku #0  LOC=116 tok=180882 cost=$0.06514900000000001 time=42.3s correct=1
+  [32/60] vibe-restapi / caveman / haiku #0  LOC=54 tok=151845 cost=$0.0525228 time=28.1s correct=1
+  [33/60] vibe-restapi / lantern / haiku #0  LOC=83 tok=150563 cost=$0.0562954 time=34.9s correct=1
+  [34/60] vibe-restapi / cinder / haiku #0  LOC=97 tok=158923 cost=$0.070526 time=49.0s correct=1
+  [35/60] vibe-scraper / lantern / haiku #0  LOC=46 tok=86315 cost=$0.0342366 time=16.1s correct=0
+  [36/60] vibe-scraper / cinder / haiku #0  LOC=40 tok=86485 cost=$0.0352747 time=20.0s correct=1
+  [37/60] vibe-restapi / ponytail / haiku #0  LOC=107 tok=124644 cost=$0.0506068 time=29.4s correct=1
+  [38/60] vibe-scraper / baseline / haiku #0  LOC=86 tok=152548 cost=$0.0605833 time=39.1s correct=1
+  [39/60] vibe-scraper / ponytail / haiku #0  LOC=34 tok=59990 cost=$0.033324400000000004 time=17.2s correct=1
+  [40/60] vibe-scraper / caveman / haiku #0  LOC=90 tok=149254 cost=$0.0486404 time=25.9s correct=0
+  [41/60] vibe-logparse / cinder / haiku #0  LOC=47 tok=56883 cost=$0.028819900000000002 time=13.1s correct=1
+  [42/60] vibe-logparse / baseline / haiku #0  LOC=48 tok=117134 cost=$0.0477585 time=28.9s correct=1
+  [43/60] vibe-logparse / lantern / haiku #0  LOC=38 tok=58043 cost=$0.0325617 time=16.2s correct=1
+  [44/60] vibe-logparse / caveman / haiku #0  LOC=40 tok=57787 cost=$0.028924599999999998 time=11.7s correct=1
+  [45/60] vibe-logparse / ponytail / haiku #0  LOC=25 tok=59247 cost=$0.030532899999999998 time=13.4s correct=1
+  [46/60] vibe-rename / cinder / haiku #0  LOC=0 tok=27944 cost=$0.0212371 time=8.2s correct=0
+  [47/60] vibe-rename / ponytail / haiku #0  LOC=76 tok=62560 cost=$0.04241779999999999 time=26.8s correct=1
+  [48/60] vibe-rename / baseline / haiku #0  LOC=188 tok=126140 cost=$0.0673551 time=53.6s correct=1
+  [49/60] vibe-rename / lantern / haiku #0  LOC=284 tok=187929 cost=$0.07092479999999998 time=49.3s correct=0
+  [50/60] vibe-rename / caveman / haiku #0  LOC=225 tok=157832 cost=$0.06428210000000001 time=44.9s correct=0
+  [51/60] vibe-adventure / cinder / haiku #0  LOC=267 tok=62297 cost=$0.0480284 time=37.1s correct=1
+  [52/60] vibe-adventure / baseline / haiku #0  LOC=229 tok=96489 cost=$0.067699 time=56.0s correct=1
+  [53/60] vibe-adventure / lantern / haiku #0  LOC=254 tok=62959 cost=$0.050255999999999995 time=42.9s correct=1
+  [54/60] vibe-adventure / caveman / haiku #0  LOC=291 tok=131962 cost=$0.06950429999999999 time=52.1s correct=1
+  [55/60] vibe-adventure / ponytail / haiku #0  LOC=142 tok=62189 cost=$0.0413684 time=26.7s correct=1
+  [56/60] vibe-jsonconf / cinder / haiku #0  LOC=106 tok=92210 cost=$0.0545311 time=40.0s correct=1
+  [57/60] vibe-jsonconf / caveman / haiku #0  LOC=135 tok=123042 cost=$0.053565499999999995 time=33.9s correct=1
+  [58/60] vibe-jsonconf / baseline / haiku #0  LOC=311 tok=166339 cost=$0.08908750000000001 time=69.4s correct=1
+  [59/60] vibe-jsonconf / ponytail / haiku #0  LOC=42 tok=62856 cost=$0.0433319 time=29.4s correct=1
+  [60/60] vibe-jsonconf / lantern / haiku #0  LOC=275 tok=164969 cost=$0.08389959999999999 time=63.2s correct=1
+
+=== vibe-adventure  (haiku, n=1) ===
+  arm               wrote%  correct     LOC   tot_tok    $/run  time_s
+  baseline             1.0      1.0     229     96489  $0.0677    56.0
+  caveman              1.0      1.0     291    131962  $0.0695    52.1
+  cinder               1.0      1.0     267     62297  $0.0480    37.1
+  lantern              1.0      1.0     254     62959  $0.0503    42.9
+  ponytail             1.0      1.0     142     62189  $0.0414    26.7
+
+=== vibe-csvstats  (haiku, n=1) ===
+  arm               wrote%  correct     LOC   tot_tok    $/run  time_s
+  baseline             1.0      1.0      42     55652  $0.0265    10.8
+  caveman              1.0      1.0      39     57772  $0.0289    11.3
+  cinder               1.0      1.0      63     56961  $0.0289    12.3
+  lantern              1.0      1.0      38     56574  $0.0273    10.8
+  ponytail             1.0      1.0      30     62933  $0.0433    25.0
+
+=== vibe-jsonconf  (haiku, n=1) ===
+  arm               wrote%  correct     LOC   tot_tok    $/run  time_s
+  baseline             1.0      1.0     311    166339  $0.0891    69.4
+  caveman              1.0      1.0     135    123042  $0.0536    33.9
+  cinder               1.0      1.0     106     92210  $0.0545    40.0
+  lantern              1.0      1.0     275    164969  $0.0839    63.2
+  ponytail             1.0      1.0      42     62856  $0.0433    29.4
+
+=== vibe-langgraph  (haiku, n=1) ===
+  arm               wrote%  correct     LOC   tot_tok    $/run  time_s
+  baseline             1.0      1.0      86     56811  $0.0310    17.8
+  caveman              1.0      1.0      83     58621  $0.0319    15.8
+  cinder               1.0      1.0      87     57506  $0.0311    16.1
+  lantern              1.0      1.0      91     57773  $0.0317    16.9
+  ponytail             1.0      1.0      45     59679  $0.0323    16.2
+
+=== vibe-logparse  (haiku, n=1) ===
+  arm               wrote%  correct     LOC   tot_tok    $/run  time_s
+  baseline             1.0      1.0      48    117134  $0.0478    28.9
+  caveman              1.0      1.0      40     57787  $0.0289    11.7
+  cinder               1.0      1.0      47     56883  $0.0288    13.1
+  lantern              1.0      1.0      38     58043  $0.0326    16.2
+  ponytail             1.0      1.0      25     59247  $0.0305    13.4
+
+=== vibe-md2html  (haiku, n=1) ===
+  arm               wrote%  correct     LOC   tot_tok    $/run  time_s
+  baseline             1.0      0.0     139     58583  $0.0373    23.7
+  caveman              1.0      1.0     133     60268  $0.0378    21.1
+  cinder               1.0      1.0     118     58962  $0.0361    19.7
+  lantern              1.0      1.0     157     59891  $0.0390    23.4
+  ponytail             1.0      1.0      55     62397  $0.0416    25.1
+
+=== vibe-password  (haiku, n=1) ===
+  arm               wrote%  correct     LOC   tot_tok    $/run  time_s
+  baseline             1.0      1.0     113     57641  $0.0339    20.7
+  caveman              1.0      1.0      89     58549  $0.0316    14.1
+  cinder               1.0      1.0      67     56971  $0.0292    13.8
+  lantern              1.0      1.0      89     57942  $0.0324    15.2
+  ponytail             1.0      1.0      58     59661  $0.0320    13.0
+
+=== vibe-rename  (haiku, n=1) ===
+  arm               wrote%  correct     LOC   tot_tok    $/run  time_s
+  baseline             1.0      1.0     188    126140  $0.0674    53.6
+  caveman              1.0      0.0     225    157832  $0.0643    44.9
+  cinder               0.0      0.0       0     27944  $0.0212     8.2
+  lantern              1.0      0.0     284    187929  $0.0709    49.3
+  ponytail             1.0      1.0      76     62560  $0.0424    26.8
+
+=== vibe-restapi  (haiku, n=1) ===
+  arm               wrote%  correct     LOC   tot_tok    $/run  time_s
+  baseline             1.0      1.0     116    180882  $0.0651    42.3
+  caveman              1.0      1.0      54    151845  $0.0525    28.1
+  cinder               1.0      1.0      97    158923  $0.0705    49.0
+  lantern              1.0      1.0      83    150563  $0.0563    34.9
+  ponytail             1.0      1.0     107    124644  $0.0506    29.4
+
+=== vibe-scraper  (haiku, n=1) ===
+  arm               wrote%  correct     LOC   tot_tok    $/run  time_s
+  baseline             1.0      1.0      86    152548  $0.0606    39.1
+  caveman              1.0      0.0      90    149254  $0.0486    25.9
+  cinder               1.0      1.0      40     86485  $0.0353    20.0
+  lantern              1.0      0.0      46     86315  $0.0342    16.1
+  ponytail             1.0      1.0      34     59990  $0.0333    17.2
+
+=== vibe-shortener  (haiku, n=1) ===
+  arm               wrote%  correct     LOC   tot_tok    $/run  time_s
+  baseline             1.0      1.0     126     58199  $0.0359    22.1
+  caveman              1.0      1.0      53     57946  $0.0296    11.6
+  cinder               1.0      1.0      69     57481  $0.0310    15.2
+  lantern              1.0      1.0      97     58288  $0.0335    18.4
+  ponytail             1.0      1.0      44     61113  $0.0372    20.6
+
+=== vibe-todo  (haiku, n=1) ===
+  arm               wrote%  correct     LOC   tot_tok    $/run  time_s
+  baseline             1.0      1.0     108     57505  $0.0334    19.4
+  caveman              1.0      1.0      95     59013  $0.0334    16.1
+  cinder               1.0      1.0     110     57871  $0.0324    15.6
+  lantern              1.0      1.0     109     59692  $0.0384    21.8
+  ponytail             1.0      1.0      63     61295  $0.0377    15.8
+
+wrote C:\Workspace\CustomInstruction\benchmarks\agentic\runs\20261001-232217/results.json + summary.json (60 cells)

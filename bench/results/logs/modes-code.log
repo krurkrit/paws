@@ -1,0 +1,176 @@
+ok  todo-null    good correct=1 safe=1 axis=safe  survived null POST
+ok  todo-null    bad  correct=1 safe=0 axis=safe  crashed on null POST
+ok  safe-path    good correct=1 safe=1 axis=safe  ok
+ok  safe-path    bad  correct=1 safe=0 axis=safe  ok
+ok  critic-email good correct=1 safe=1 axis=safe  ok
+ok  critic-email bad  correct=1 safe=0 axis=safe  ok
+ok  rate-limit   good correct=1 safe=1 axis=safe  ok
+ok  rate-limit   bad  correct=1 safe=0 axis=safe  ok
+ok  sql-user     good correct=1 safe=1 axis=safe  ok
+ok  sql-user     bad  correct=1 safe=0 axis=safe  ok
+ok  auth-token   good correct=1 safe=1 axis=safe  ok
+ok  auth-token   bad  correct=1 safe=0 axis=safe  ok
+ok  csv-sum      good correct=1 safe=1 axis=safe  ok
+ok  csv-sum      bad  correct=1 safe=0 axis=safe  ok
+ok  cache        good correct=1 safe=1 axis=correct  ok (over-engineering measured by LOC/files)
+ok  cache        bad  correct=0 safe=0 axis=correct  ok (over-engineering measured by LOC/files)
+ok  reuse-slug   good correct=1 safe=1 axis=safe  reused project slugify
+ok  reuse-slug   bad  correct=1 safe=0 axis=safe  re-implemented slug (diverges on accents)
+ok  reuse-money  good correct=1 safe=1 axis=safe  reused format_money
+ok  reuse-money  bad  correct=1 safe=0 axis=safe  re-implemented formatting (no grouping)
+ok  trace-transfer good correct=1 safe=1 axis=safe  fixed shared _debit (withdraw guarded too)
+ok  trace-transfer bad  correct=1 safe=0 axis=safe  patched only transfer; withdraw still overdraws
+ok  trace-amount good correct=1 safe=1 axis=safe  fixed shared parse_amount (tax_due works too)
+ok  trace-amount bad  correct=1 safe=0 axis=safe  patched only invoice_total; tax_due still breaks on commas
+ok  plugin_dir   env  override honored
+ok  plugin_dir   miss clear error (sys.exit)
+ok  tree_kill    terminates a timed-out cell
+
+selftest: all instruments valid
+running 72 cells, 4 at a time
+  [1/72] cs-todo-api / paws-lite+skills / haiku #1  LOC=50 tok=86508 cost=$0.034978 time=17.6s correct=1
+  [2/72] cs-todo-api / paws-lite+skills / haiku #0  LOC=51 tok=116333 cost=$0.0405643 time=20.6s correct=1
+  [3/72] cs-todo-api / paws+skills / haiku #0  LOC=49 tok=59544 cost=$0.036107600000000004 time=21.1s correct=1
+  [4/72] cs-todo-api / paws+skills / haiku #1  LOC=37 tok=173702 cost=$0.046153299999999994 time=22.2s correct=1
+  [5/72] cs-todo-api / paws-ultra+skills / haiku #1  LOC=40 tok=57621 cost=$0.0290921 time=12.3s correct=1
+  [6/72] cs-todo-api / paws-ultra+skills / haiku #0  LOC=34 tok=86872 cost=$0.0350052 time=18.0s correct=1
+  [7/72] cs-validation / paws+skills / haiku #1  LOC=59 tok=58615 cost=$0.0328292 time=17.5s correct=1
+  [8/72] cs-validation / paws+skills / haiku #0  LOC=77 tok=59308 cost=$0.0351763 time=18.7s correct=1
+  [9/72] cs-validation / paws-ultra+skills / haiku #0  LOC=45 tok=58060 cost=$0.0307667 time=14.3s correct=1
+  [10/72] cs-validation / paws-lite+skills / haiku #0  LOC=40 tok=87790 cost=$0.0375332 time=21.4s correct=1
+  [11/72] cs-validation / paws-lite+skills / haiku #1  LOC=50 tok=59214 cost=$0.034819600000000006 time=19.4s correct=1
+  [12/72] cs-validation / paws-ultra+skills / haiku #1  LOC=26 tok=58212 cost=$0.0312248 time=15.3s correct=1
+  [13/72] cs-repo / paws-lite+skills / haiku #1  LOC=49 tok=57463 cost=$0.028624399999999998 time=11.6s correct=1
+  [14/72] cs-repo / paws-lite+skills / haiku #0  LOC=64 tok=57908 cost=$0.030235699999999997 time=13.8s correct=1
+  [15/72] cs-repo / paws+skills / haiku #1  LOC=66 tok=86372 cost=$0.0344041 time=15.3s correct=1
+  [16/72] cs-repo / paws+skills / haiku #0  LOC=61 tok=87134 cost=$0.0360279 time=17.0s correct=1
+  [17/72] cs-csvsales / paws+skills / haiku #1  LOC=18 tok=58383 cost=$0.0319807 time=16.2s correct=1
+  [18/72] cs-repo / paws-ultra+skills / haiku #1  LOC=57 tok=60024 cost=$0.0377885 time=22.5s correct=1
+  [19/72] cs-csvsales / paws+skills / haiku #0  LOC=38 tok=88897 cost=$0.03972729999999999 time=22.5s correct=1
+  [20/72] cs-repo / paws-ultra+skills / haiku #0  LOC=16 tok=63004 cost=$0.0479782 time=30.2s correct=1
+  [21/72] cs-csvsales / paws-lite+skills / haiku #0  LOC=26 tok=57200 cost=$0.027624199999999998 time=9.2s correct=1
+  [22/72] cs-csvsales / paws-ultra+skills / haiku #0  LOC=19 tok=58106 cost=$0.030733299999999998 time=13.7s correct=1
+  [23/72] cs-csvsales / paws-lite+skills / haiku #1  LOC=51 tok=86453 cost=$0.0338169 time=15.6s correct=1
+  [24/72] cs-ratelimit / paws+skills / haiku #0  LOC=55 tok=59613 cost=$0.0360967 time=21.3s correct=1
+  [25/72] cs-ratelimit / paws+skills / haiku #1  LOC=45 tok=57929 cost=$0.030157700000000003 time=13.0s correct=1
+  [26/72] cs-csvsales / paws-ultra+skills / haiku #1  LOC=27 tok=60951 cost=$0.040743299999999996 time=25.1s correct=1
+  [27/72] cs-ratelimit / paws-lite+skills / haiku #0  LOC=38 tok=57539 cost=$0.028997099999999998 time=16.3s correct=1
+  [28/72] cs-ratelimit / paws-ultra+skills / haiku #0  LOC=34 tok=57649 cost=$0.029051800000000003 time=12.0s correct=1
+  [29/72] cs-ratelimit / paws-ultra+skills / haiku #1  LOC=39 tok=58422 cost=$0.0318731 time=15.8s correct=1
+  [30/72] cs-logger / paws+skills / haiku #0  LOC=55 tok=59372 cost=$0.0354305 time=15.6s correct=1
+  [31/72] cs-ratelimit / paws-lite+skills / haiku #1  LOC=47 tok=87690 cost=$0.0369346 time=22.7s correct=1
+  [32/72] cs-logger / paws-lite+skills / haiku #0  LOC=28 tok=57103 cost=$0.027313900000000002 time=10.0s correct=1
+  [33/72] cs-logger / paws-lite+skills / haiku #1  LOC=58 tok=86399 cost=$0.0340018 time=15.1s correct=1
+  [34/72] cs-logger / paws+skills / haiku #1  LOC=58 tok=60239 cost=$0.0384128 time=24.1s correct=1
+  [35/72] cs-logger / paws-ultra+skills / haiku #0  LOC=38 tok=59089 cost=$0.034232200000000004 time=19.4s correct=1
+  [36/72] cs-logger / paws-ultra+skills / haiku #1  LOC=25 tok=58017 cost=$0.030486199999999998 time=13.6s correct=1
+  [37/72] ts-todo-component / paws+skills / haiku #0  LOC=90 tok=58360 cost=$0.0318231 time=17.0s correct=1
+  [38/72] ts-todo-component / paws+skills / haiku #1  LOC=81 tok=86639 cost=$0.035248299999999996 time=16.0s correct=1
+  [39/72] ts-todo-component / paws-lite+skills / haiku #1  LOC=80 tok=58196 cost=$0.0310861 time=12.6s correct=1
+  [40/72] ts-todo-component / paws-lite+skills / haiku #0  LOC=78 tok=89335 cost=$0.041300300000000005 time=18.2s correct=1
+  [41/72] ts-todo-component / paws-ultra+skills / haiku #1  LOC=53 tok=57619 cost=$0.0291393 time=10.4s correct=1
+  [42/72] ts-api-client / paws+skills / haiku #0  LOC=54 tok=57571 cost=$0.029221 time=12.6s correct=1
+  [43/72] ts-todo-component / paws-ultra+skills / haiku #0  LOC=81 tok=86650 cost=$0.0350118 time=16.9s correct=1
+  [44/72] ts-api-client / paws+skills / haiku #1  LOC=57 tok=85975 cost=$0.032730300000000004 time=12.2s correct=1
+  [45/72] ts-api-client / paws-lite+skills / haiku #0  LOC=71 tok=58070 cost=$0.0308813 time=12.5s correct=1
+  [46/72] ts-api-client / paws-ultra+skills / haiku #1  LOC=71 tok=57610 cost=$0.029045500000000002 time=12.0s correct=1
+  [47/72] ts-hooks / paws+skills / haiku #0  LOC=42 tok=86425 cost=$0.033767500000000006 time=13.1s correct=1
+  [48/72] ts-api-client / paws-lite+skills / haiku #1  LOC=59 tok=91726 cost=$0.0474177 time=30.8s correct=1
+  [49/72] ts-api-client / paws-ultra+skills / haiku #0  LOC=67 tok=92045 cost=$0.0481836 time=30.8s correct=1
+  [50/72] ts-hooks / paws-lite+skills / haiku #0  LOC=37 tok=57548 cost=$0.028895800000000003 time=12.6s correct=1
+  [51/72] ts-hooks / paws+skills / haiku #1  LOC=47 tok=116555 cost=$0.040347900000000006 time=21.9s correct=1
+  [52/72] ts-hooks / paws-lite+skills / haiku #1  LOC=32 tok=85541 cost=$0.0311754 time=11.8s correct=1
+  [53/72] ts-hooks / paws-ultra+skills / haiku #0  LOC=36 tok=58261 cost=$0.0313535 time=14.6s correct=1
+  [54/72] ts-hooks / paws-ultra+skills / haiku #1  LOC=30 tok=57899 cost=$0.030129299999999998 time=13.2s correct=1
+  [55/72] ts-emitter / paws+skills / haiku #0  LOC=32 tok=57625 cost=$0.029313099999999998 time=12.1s correct=1
+  [56/72] ts-emitter / paws-lite+skills / haiku #0  LOC=25 tok=57148 cost=$0.027615499999999998 time=11.1s correct=1
+  [57/72] ts-emitter / paws+skills / haiku #1  LOC=43 tok=58814 cost=$0.033721 time=16.9s correct=1
+  [58/72] ts-emitter / paws-ultra+skills / haiku #0  LOC=33 tok=58356 cost=$0.0317333 time=12.2s correct=1
+  [59/72] ts-emitter / paws-lite+skills / haiku #1  LOC=37 tok=58995 cost=$0.0337954 time=15.7s correct=1
+  [60/72] ts-emitter / paws-ultra+skills / haiku #1  LOC=51 tok=58662 cost=$0.0330116 time=17.0s correct=1
+  [61/72] ts-formvalidate / paws+skills / haiku #1  LOC=56 tok=58026 cost=$0.030777899999999997 time=14.2s correct=1
+  [62/72] ts-formvalidate / paws-lite+skills / haiku #0  LOC=52 tok=57770 cost=$0.0296401 time=12.9s correct=1
+  [63/72] ts-formvalidate / paws+skills / haiku #0  LOC=64 tok=118889 cost=$0.048365899999999996 time=28.8s correct=1
+  [64/72] ts-formvalidate / paws-lite+skills / haiku #1  LOC=67 tok=57940 cost=$0.0303881 time=13.5s correct=1
+  [65/72] ts-formvalidate / paws-ultra+skills / haiku #0  LOC=56 tok=90254 cost=$0.0443865 time=20.5s correct=1
+  [66/72] ts-pagination / paws+skills / haiku #1  LOC=159 tok=88066 cost=$0.04054619999999999 time=22.7s correct=1
+  [67/72] ts-formvalidate / paws-ultra+skills / haiku #1  LOC=71 tok=120948 cost=$0.0528229 time=34.7s correct=1
+  [68/72] ts-pagination / paws+skills / haiku #0  LOC=102 tok=89505 cost=$0.0456602 time=27.8s correct=1
+  [69/72] ts-pagination / paws-lite+skills / haiku #0  LOC=123 tok=61433 cost=$0.0426488 time=26.4s correct=1
+  [70/72] ts-pagination / paws-lite+skills / haiku #1  LOC=135 tok=87670 cost=$0.0390508 time=20.7s correct=1
+  [71/72] ts-pagination / paws-ultra+skills / haiku #1  LOC=127 tok=87252 cost=$0.0372389 time=19.6s correct=1
+  [72/72] ts-pagination / paws-ultra+skills / haiku #0  LOC=157 tok=88160 cost=$0.0406834 time=23.6s correct=1
+
+=== cs-csvsales  (haiku, n=2) ===
+  arm               wrote%  correct     LOC   tot_tok    $/run  time_s
+  paws+skills          1.0      1.0    28.0     73640  $0.0359    19.4
+  paws-lite+skills     1.0      1.0    38.5     71826  $0.0307    12.4
+  paws-ultra+skills     1.0      1.0    23.0     59528  $0.0357    19.4
+
+=== cs-logger  (haiku, n=2) ===
+  arm               wrote%  correct     LOC   tot_tok    $/run  time_s
+  paws+skills          1.0      1.0    56.5     59806  $0.0369    19.8
+  paws-lite+skills     1.0      1.0    43.0     71751  $0.0307    12.6
+  paws-ultra+skills     1.0      1.0    31.5     58553  $0.0324    16.5
+
+=== cs-ratelimit  (haiku, n=2) ===
+  arm               wrote%  correct     LOC   tot_tok    $/run  time_s
+  paws+skills          1.0      1.0    50.0     58771  $0.0331    17.2
+  paws-lite+skills     1.0      1.0    42.5     72614  $0.0330    19.5
+  paws-ultra+skills     1.0      1.0    36.5     58036  $0.0305    13.9
+
+=== cs-repo  (haiku, n=2) ===
+  arm               wrote%  correct     LOC   tot_tok    $/run  time_s
+  paws+skills          1.0      1.0    63.5     86753  $0.0352    16.1
+  paws-lite+skills     1.0      1.0    56.5     57686  $0.0294    12.7
+  paws-ultra+skills     1.0      1.0    36.5     61514  $0.0429    26.4
+
+=== cs-todo-api  (haiku, n=2) ===
+  arm               wrote%  correct     LOC   tot_tok    $/run  time_s
+  paws+skills          1.0      1.0    43.0    116623  $0.0411    21.7
+  paws-lite+skills     1.0      1.0    50.5    101420  $0.0378    19.1
+  paws-ultra+skills     1.0      1.0    37.0     72246  $0.0320    15.1
+
+=== cs-validation  (haiku, n=2) ===
+  arm               wrote%  correct     LOC   tot_tok    $/run  time_s
+  paws+skills          1.0      1.0    68.0     58962  $0.0340    18.1
+  paws-lite+skills     1.0      1.0    45.0     73502  $0.0362    20.4
+  paws-ultra+skills     1.0      1.0    35.5     58136  $0.0310    14.8
+
+=== ts-api-client  (haiku, n=2) ===
+  arm               wrote%  correct     LOC   tot_tok    $/run  time_s
+  paws+skills          1.0      1.0    55.5     71773  $0.0310    12.4
+  paws-lite+skills     1.0      1.0    65.0     74898  $0.0391    21.7
+  paws-ultra+skills     1.0      1.0    69.0     74828  $0.0386    21.4
+
+=== ts-emitter  (haiku, n=2) ===
+  arm               wrote%  correct     LOC   tot_tok    $/run  time_s
+  paws+skills          1.0      1.0    37.5     58220  $0.0315    14.5
+  paws-lite+skills     1.0      1.0    31.0     58072  $0.0307    13.4
+  paws-ultra+skills     1.0      1.0    42.0     58509  $0.0324    14.6
+
+=== ts-formvalidate  (haiku, n=2) ===
+  arm               wrote%  correct     LOC   tot_tok    $/run  time_s
+  paws+skills          1.0      1.0    60.0     88458  $0.0396    21.5
+  paws-lite+skills     1.0      1.0    59.5     57855  $0.0300    13.2
+  paws-ultra+skills     1.0      1.0    63.5    105601  $0.0486    27.6
+
+=== ts-hooks  (haiku, n=2) ===
+  arm               wrote%  correct     LOC   tot_tok    $/run  time_s
+  paws+skills          1.0      1.0    44.5    101490  $0.0371    17.5
+  paws-lite+skills     1.0      1.0    34.5     71544  $0.0300    12.2
+  paws-ultra+skills     1.0      1.0    33.0     58080  $0.0307    13.9
+
+=== ts-pagination  (haiku, n=2) ===
+  arm               wrote%  correct     LOC   tot_tok    $/run  time_s
+  paws+skills          1.0      1.0   130.5     88786  $0.0431    25.2
+  paws-lite+skills     1.0      1.0   129.0     74552  $0.0408    23.6
+  paws-ultra+skills     1.0      1.0   142.0     87706  $0.0390    21.6
+
+=== ts-todo-component  (haiku, n=2) ===
+  arm               wrote%  correct     LOC   tot_tok    $/run  time_s
+  paws+skills          1.0      1.0    85.5     72500  $0.0335    16.5
+  paws-lite+skills     1.0      1.0    79.0     73766  $0.0362    15.4
+  paws-ultra+skills     1.0      1.0    67.0     72134  $0.0321    13.7
+
+wrote C:\Workspace\CustomInstruction\bench\runs\claude\20261002-222212/results.json + summary.json (72 cells)

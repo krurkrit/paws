@@ -1,0 +1,44 @@
+{
+  "name": "paws",
+  "version": "1.0.0",
+  "description": "Terse, minimal, safe coding agent: less code and fewer tokens without dropping safeguards",
+  "author": {
+    "name": "Krurkrit Phoosakul",
+    "url": "https://github.com/krurkrit"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/krurkrit/paws",
+  "repository": "https://github.com/krurkrit/paws",
+  "keywords": [
+    "token-efficiency",
+    "terse",
+    "minimal-code",
+    "code-quality",
+    "csharp",
+    "typescript"
+  ],
+  "skills": "./skills/",
+  "hooks": "./hooks/hooks.json",
+  "interface": {
+    "displayName": "Paws",
+    "shortDescription": "Less code, fewer tokens, same safeguards",
+    "longDescription": "Paws makes Codex answer first without filler, build only what was asked, reuse existing code, fix bugs at the root and test only what changed, while keeping validation, security and error handling. Switch modes with \"paws lite\", \"paws full\", \"paws ultra\" or \"stop paws\". C# and TypeScript rules load only when needed.",
+    "developerName": "Krurkrit Phoosakul",
+    "category": "Productivity",
+    "capabilities": [
+      "Instructions",
+      "Lifecycle hooks"
+    ],
+    "websiteURL": "https://github.com/krurkrit/paws",
+    "privacyPolicyURL": "https://github.com/krurkrit/paws/blob/main/PRIVACY.md",
+    "termsOfServiceURL": "https://github.com/krurkrit/paws/blob/main/LICENSE",
+    "defaultPrompt": [
+      "paws ultra",
+      "paws lite",
+      "stop paws"
+    ],
+    "brandColor": "#FD7E14",
+    "composerIcon": "./docs/logo-100x100.png",
+    "logo": "./docs/logo.png"
+  }
+}

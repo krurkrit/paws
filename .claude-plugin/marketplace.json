@@ -1,0 +1,9 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "paws",
+  "description": "Terse, minimal, safe coding agent",
+  "owner": { "name": "Krurkrit Phoosakul", "url": "https://github.com/krurkrit" },
+  "plugins": [
+    { "name": "paws", "description": "Less code and fewer tokens without dropping safeguards", "source": "./", "category": "productivity" }
+  ]
+}

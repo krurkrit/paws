@@ -1,0 +1,182 @@
+ok  todo-null    good correct=1 safe=1 axis=safe  survived null POST
+ok  todo-null    bad  correct=1 safe=0 axis=safe  crashed on null POST
+ok  safe-path    good correct=1 safe=1 axis=safe  ok
+ok  safe-path    bad  correct=1 safe=0 axis=safe  ok
+ok  critic-email good correct=1 safe=1 axis=safe  ok
+ok  critic-email bad  correct=1 safe=0 axis=safe  ok
+ok  rate-limit   good correct=1 safe=1 axis=safe  ok
+ok  rate-limit   bad  correct=1 safe=0 axis=safe  ok
+ok  sql-user     good correct=1 safe=1 axis=safe  ok
+ok  sql-user     bad  correct=1 safe=0 axis=safe  ok
+ok  auth-token   good correct=1 safe=1 axis=safe  ok
+ok  auth-token   bad  correct=1 safe=0 axis=safe  ok
+ok  csv-sum      good correct=1 safe=1 axis=safe  ok
+ok  csv-sum      bad  correct=1 safe=0 axis=safe  ok
+ok  cache        good correct=1 safe=1 axis=correct  ok (over-engineering measured by LOC/files)
+ok  cache        bad  correct=0 safe=0 axis=correct  ok (over-engineering measured by LOC/files)
+ok  reuse-slug   good correct=1 safe=1 axis=safe  reused project slugify
+ok  reuse-slug   bad  correct=1 safe=0 axis=safe  re-implemented slug (diverges on accents)
+ok  reuse-money  good correct=1 safe=1 axis=safe  reused format_money
+ok  reuse-money  bad  correct=1 safe=0 axis=safe  re-implemented formatting (no grouping)
+ok  trace-transfer good correct=1 safe=1 axis=safe  fixed shared _debit (withdraw guarded too)
+ok  trace-transfer bad  correct=1 safe=0 axis=safe  patched only transfer; withdraw still overdraws
+ok  trace-amount good correct=1 safe=1 axis=safe  fixed shared parse_amount (tax_due works too)
+ok  trace-amount bad  correct=1 safe=0 axis=safe  patched only invoice_total; tax_due still breaks on commas
+ok  plugin_dir   env  override honored
+ok  plugin_dir   miss clear error (sys.exit)
+ok  tree_kill    terminates a timed-out cell
+
+selftest: all instruments valid
+running 60 cells, 4 at a time
+  [1/60] txt-process-thread / ponytail / sonnet55 #0  LOC=0 tok=29063 cost=$0.0422364 time=5.3s correct=1
+  [2/60] txt-process-thread / paws-lite / sonnet55 #0  LOC=0 tok=27517 cost=$0.0353804 time=5.7s correct=1
+  [3/60] txt-process-thread / baseline / sonnet55 #0  LOC=0 tok=26864 cost=$0.0344364 time=6.3s correct=1
+  [4/60] txt-process-thread / paws-ultra / sonnet55 #0  LOC=0 tok=27462 cost=$0.0348124 time=4.0s correct=1
+  [5/60] txt-process-thread / paws / sonnet55 #0  LOC=0 tok=27456 cost=$0.0348544 time=4.4s correct=1
+  [6/60] txt-process-thread / caveman / sonnet55 #0  LOC=0 tok=28060 cost=$0.0377384 time=13.1s correct=1
+  [7/60] txt-rest-graphql / baseline / sonnet55 #0  LOC=6 tok=27574 cost=$0.041470400000000004 time=11.8s correct=1
+  [8/60] txt-rest-graphql / caveman / sonnet55 #0  LOC=0 tok=28473 cost=$0.0417964 time=8.0s correct=1
+  [9/60] txt-rest-graphql / ponytail / sonnet55 #0  LOC=0 tok=29422 cost=$0.0457664 time=8.1s correct=1
+  [10/60] txt-rest-graphql / paws-lite / sonnet55 #0  LOC=0 tok=27925 cost=$0.0393824 time=8.6s correct=1
+  [11/60] txt-rest-graphql / paws / sonnet55 #0  LOC=0 tok=27808 cost=$0.0383084 time=7.2s correct=1
+  [12/60] txt-rest-graphql / paws-ultra / sonnet55 #0  LOC=0 tok=27786 cost=$0.0379924 time=7.4s correct=1
+  [13/60] txt-di-dotnet / baseline / sonnet55 #0  LOC=22 tok=28154 cost=$0.047270400000000004 time=14.6s correct=1
+  [14/60] txt-di-dotnet / ponytail / sonnet55 #0  LOC=11 tok=29754 cost=$0.0490864 time=9.6s correct=1
+  [15/60] txt-di-dotnet / caveman / sonnet55 #0  LOC=44 tok=29600 cost=$0.0530664 time=15.4s correct=1
+  [16/60] txt-di-dotnet / paws-lite / sonnet55 #0  LOC=6 tok=28371 cost=$0.0438304 time=10.0s correct=1
+  [17/60] txt-ts-type-interface / baseline / sonnet55 #0  LOC=0 tok=26981 cost=$0.035516400000000004 time=7.3s correct=1
+  [18/60] txt-di-dotnet / paws / sonnet55 #0  LOC=5 tok=28207 cost=$0.0422984 time=10.2s correct=1
+  [19/60] txt-di-dotnet / paws-ultra / sonnet55 #0  LOC=0 tok=28007 cost=$0.0401604 time=9.0s correct=1
+  [20/60] txt-ts-type-interface / caveman / sonnet55 #0  LOC=2 tok=28299 cost=$0.0400324 time=6.3s correct=1
+  [21/60] txt-ts-type-interface / ponytail / sonnet55 #0  LOC=0 tok=29043 cost=$0.0419224 time=4.9s correct=1
+  [22/60] txt-ts-type-interface / paws-lite / sonnet55 #0  LOC=0 tok=27752 cost=$0.0376344 time=6.3s correct=1
+  [23/60] txt-ts-type-interface / paws-ultra / sonnet55 #0  LOC=0 tok=27759 cost=$0.0376744 time=6.1s correct=1
+  [24/60] txt-ts-type-interface / paws / sonnet55 #0  LOC=0 tok=27841 cost=$0.0385964 time=6.3s correct=1
+  [25/60] txt-git-rebase / paws-lite / sonnet55 #0  LOC=0 tok=27762 cost=$0.0377404 time=5.5s correct=1
+  [26/60] txt-git-rebase / ponytail / sonnet55 #0  LOC=3 tok=29190 cost=$0.0434344 time=6.5s correct=1
+  [27/60] txt-git-rebase / caveman / sonnet55 #0  LOC=6 tok=28339 cost=$0.0404684 time=7.9s correct=1
+  [28/60] txt-git-rebase / baseline / sonnet55 #0  LOC=14 tok=27199 cost=$0.0377324 time=9.2s correct=1
+  [29/60] txt-git-rebase / paws / sonnet55 #0  LOC=0 tok=27707 cost=$0.0373284 time=6.0s correct=1
+  [30/60] txt-git-rebase / paws-ultra / sonnet55 #0  LOC=0 tok=27655 cost=$0.0366584 time=5.1s correct=1
+  [31/60] txt-cache-design / caveman / sonnet55 #0  LOC=0 tok=29224 cost=$0.049366400000000005 time=13.7s correct=1
+  [32/60] txt-cache-design / ponytail / sonnet55 #0  LOC=0 tok=29665 cost=$0.0482504 time=11.2s correct=1
+  [33/60] txt-cache-design / paws-lite / sonnet55 #0  LOC=0 tok=28359 cost=$0.0437584 time=11.9s correct=1
+  [34/60] txt-cache-design / paws / sonnet55 #0  LOC=0 tok=28304 cost=$0.0433344 time=11.4s correct=1
+  [35/60] txt-cache-design / paws-ultra / sonnet55 #0  LOC=0 tok=28232 cost=$0.0424884 time=10.6s correct=1
+  [36/60] txt-csharp-async / baseline / sonnet55 #0  LOC=16 tok=27686 cost=$0.0425844 time=12.6s correct=1
+  [37/60] txt-csharp-async / caveman / sonnet55 #0  LOC=11 tok=28591 cost=$0.0430184 time=9.4s correct=1
+  [38/60] txt-csharp-async / ponytail / sonnet55 #0  LOC=7 tok=29494 cost=$0.046498399999999995 time=8.1s correct=1
+  [39/60] txt-cache-design / baseline / sonnet55 #0  LOC=129 tok=64594 cost=$0.1204278 time=41.9s correct=1
+  [40/60] txt-csharp-async / paws-lite / sonnet55 #0  LOC=8 tok=28065 cost=$0.0407824 time=7.9s correct=1
+  [41/60] txt-csharp-async / paws-ultra / sonnet55 #0  LOC=0 tok=27744 cost=$0.0375544 time=5.8s correct=1
+  [42/60] txt-csharp-async / paws / sonnet55 #0  LOC=7 tok=28011 cost=$0.040338399999999996 time=9.0s correct=1
+  [43/60] txt-review-bug / caveman / sonnet55 #0  LOC=4 tok=28053 cost=$0.0374404 time=4.8s correct=1
+  [44/60] txt-review-bug / baseline / sonnet55 #0  LOC=6 tok=26904 cost=$0.034614400000000003 time=6.4s correct=1
+  [45/60] txt-review-bug / ponytail / sonnet55 #0  LOC=2 tok=28974 cost=$0.0411184 time=4.9s correct=1
+  [46/60] txt-review-bug / paws-lite / sonnet55 #0  LOC=4 tok=27496 cost=$0.0349424 time=4.6s correct=1
+  [47/60] txt-review-bug / paws-ultra / sonnet55 #0  LOC=0 tok=27472 cost=$0.0346664 time=4.1s correct=1
+  [48/60] txt-review-bug / paws / sonnet55 #0  LOC=5 tok=27461 cost=$0.034700400000000006 time=4.9s correct=1
+  [49/60] txt-commit-msg / baseline / sonnet55 #0  LOC=0 tok=26412 cost=$0.0297304 time=3.1s correct=1
+  [50/60] txt-commit-msg / caveman / sonnet55 #0  LOC=5 tok=27902 cost=$0.035966399999999996 time=3.2s correct=1
+  [51/60] txt-commit-msg / paws-lite / sonnet55 #0  LOC=3 tok=27373 cost=$0.0337304 time=3.1s correct=1
+  [52/60] txt-commit-msg / ponytail / sonnet55 #0  LOC=3 tok=28788 cost=$0.0392704 time=3.9s correct=1
+  [53/60] txt-commit-msg / paws / sonnet55 #0  LOC=3 tok=27349 cost=$0.0335864 time=3.6s correct=1
+  [54/60] txt-commit-msg / paws-ultra / sonnet55 #0  LOC=3 tok=27368 cost=$0.0336504 time=3.3s correct=1
+  [55/60] txt-readme-cli / caveman / sonnet55 #0  LOC=15 tok=28233 cost=$0.0392164 time=5.3s correct=1
+  [56/60] txt-readme-cli / baseline / sonnet55 #0  LOC=12 tok=26951 cost=$0.0350664 time=7.1s correct=1
+  [57/60] txt-readme-cli / ponytail / sonnet55 #0  LOC=4 tok=28965 cost=$0.0410344 time=3.8s correct=1
+  [58/60] txt-readme-cli / paws-lite / sonnet55 #0  LOC=9 tok=27668 cost=$0.036614400000000005 time=5.9s correct=1
+  [59/60] txt-readme-cli / paws / sonnet55 #0  LOC=13 tok=27624 cost=$0.0362644 time=4.8s correct=1
+  [60/60] txt-readme-cli / paws-ultra / sonnet55 #0  LOC=10 tok=27559 cost=$0.0355064 time=4.2s correct=1
+
+=== txt-cache-design  (sonnet55, n=1) ===
+  arm               wrote%  correct     LOC   tot_tok    $/run  time_s
+  baseline             1.0      1.0     129     64594  $0.1204    41.9
+  caveman              0.0      1.0       0     29224  $0.0494    13.7
+  paws                 0.0      1.0       0     28304  $0.0433    11.4
+  paws-lite            0.0      1.0       0     28359  $0.0438    11.9
+  paws-ultra           0.0      1.0       0     28232  $0.0425    10.6
+  ponytail             0.0      1.0       0     29665  $0.0483    11.2
+
+=== txt-commit-msg  (sonnet55, n=1) ===
+  arm               wrote%  correct     LOC   tot_tok    $/run  time_s
+  baseline             0.0      1.0       0     26412  $0.0297     3.1
+  caveman              1.0      1.0       5     27902  $0.0360     3.2
+  paws                 1.0      1.0       3     27349  $0.0336     3.6
+  paws-lite            1.0      1.0       3     27373  $0.0337     3.1
+  paws-ultra           1.0      1.0       3     27368  $0.0337     3.3
+  ponytail             1.0      1.0       3     28788  $0.0393     3.9
+
+=== txt-csharp-async  (sonnet55, n=1) ===
+  arm               wrote%  correct     LOC   tot_tok    $/run  time_s
+  baseline             1.0      1.0      16     27686  $0.0426    12.6
+  caveman              1.0      1.0      11     28591  $0.0430     9.4
+  paws                 1.0      1.0       7     28011  $0.0403     9.0
+  paws-lite            1.0      1.0       8     28065  $0.0408     7.9
+  paws-ultra           0.0      1.0       0     27744  $0.0376     5.8
+  ponytail             1.0      1.0       7     29494  $0.0465     8.1
+
+=== txt-di-dotnet  (sonnet55, n=1) ===
+  arm               wrote%  correct     LOC   tot_tok    $/run  time_s
+  baseline             1.0      1.0      22     28154  $0.0473    14.6
+  caveman              1.0      1.0      44     29600  $0.0531    15.4
+  paws                 1.0      1.0       5     28207  $0.0423    10.2
+  paws-lite            1.0      1.0       6     28371  $0.0438    10.0
+  paws-ultra           0.0      1.0       0     28007  $0.0402     9.0
+  ponytail             1.0      1.0      11     29754  $0.0491     9.6
+
+=== txt-git-rebase  (sonnet55, n=1) ===
+  arm               wrote%  correct     LOC   tot_tok    $/run  time_s
+  baseline             1.0      1.0      14     27199  $0.0377     9.2
+  caveman              1.0      1.0       6     28339  $0.0405     7.9
+  paws                 0.0      1.0       0     27707  $0.0373     6.0
+  paws-lite            0.0      1.0       0     27762  $0.0377     5.5
+  paws-ultra           0.0      1.0       0     27655  $0.0367     5.1
+  ponytail             1.0      1.0       3     29190  $0.0434     6.5
+
+=== txt-process-thread  (sonnet55, n=1) ===
+  arm               wrote%  correct     LOC   tot_tok    $/run  time_s
+  baseline             0.0      1.0       0     26864  $0.0344     6.3
+  caveman              0.0      1.0       0     28060  $0.0377    13.1
+  paws                 0.0      1.0       0     27456  $0.0349     4.4
+  paws-lite            0.0      1.0       0     27517  $0.0354     5.7
+  paws-ultra           0.0      1.0       0     27462  $0.0348     4.0
+  ponytail             0.0      1.0       0     29063  $0.0422     5.3
+
+=== txt-readme-cli  (sonnet55, n=1) ===
+  arm               wrote%  correct     LOC   tot_tok    $/run  time_s
+  baseline             1.0      1.0      12     26951  $0.0351     7.1
+  caveman              1.0      1.0      15     28233  $0.0392     5.3
+  paws                 1.0      1.0      13     27624  $0.0363     4.8
+  paws-lite            1.0      1.0       9     27668  $0.0366     5.9
+  paws-ultra           1.0      1.0      10     27559  $0.0355     4.2
+  ponytail             1.0      1.0       4     28965  $0.0410     3.8
+
+=== txt-rest-graphql  (sonnet55, n=1) ===
+  arm               wrote%  correct     LOC   tot_tok    $/run  time_s
+  baseline             1.0      1.0       6     27574  $0.0415    11.8
+  caveman              0.0      1.0       0     28473  $0.0418     8.0
+  paws                 0.0      1.0       0     27808  $0.0383     7.2
+  paws-lite            0.0      1.0       0     27925  $0.0394     8.6
+  paws-ultra           0.0      1.0       0     27786  $0.0380     7.4
+  ponytail             0.0      1.0       0     29422  $0.0458     8.1
+
+=== txt-review-bug  (sonnet55, n=1) ===
+  arm               wrote%  correct     LOC   tot_tok    $/run  time_s
+  baseline             1.0      1.0       6     26904  $0.0346     6.4
+  caveman              1.0      1.0       4     28053  $0.0374     4.8
+  paws                 1.0      1.0       5     27461  $0.0347     4.9
+  paws-lite            1.0      1.0       4     27496  $0.0349     4.6
+  paws-ultra           0.0      1.0       0     27472  $0.0347     4.1
+  ponytail             1.0      1.0       2     28974  $0.0411     4.9
+
+=== txt-ts-type-interface  (sonnet55, n=1) ===
+  arm               wrote%  correct     LOC   tot_tok    $/run  time_s
+  baseline             0.0      1.0       0     26981  $0.0355     7.3
+  caveman              1.0      1.0       2     28299  $0.0400     6.3
+  paws                 0.0      1.0       0     27841  $0.0386     6.3
+  paws-lite            0.0      1.0       0     27752  $0.0376     6.3
+  paws-ultra           0.0      1.0       0     27759  $0.0377     6.1
+  ponytail             0.0      1.0       0     29043  $0.0419     4.9
+
+wrote C:\Workspace\CustomInstruction\bench\runs\claude\20261002-230001/results.json + summary.json (60 cells)

@@ -1,0 +1,212 @@
+ok  todo-null    good correct=1 safe=1 axis=safe  survived null POST
+ok  todo-null    bad  correct=1 safe=0 axis=safe  crashed on null POST
+ok  safe-path    good correct=1 safe=1 axis=safe  ok
+ok  safe-path    bad  correct=1 safe=0 axis=safe  ok
+ok  critic-email good correct=1 safe=1 axis=safe  ok
+ok  critic-email bad  correct=1 safe=0 axis=safe  ok
+ok  rate-limit   good correct=1 safe=1 axis=safe  ok
+ok  rate-limit   bad  correct=1 safe=0 axis=safe  ok
+ok  sql-user     good correct=1 safe=1 axis=safe  ok
+ok  sql-user     bad  correct=1 safe=0 axis=safe  ok
+ok  auth-token   good correct=1 safe=1 axis=safe  ok
+ok  auth-token   bad  correct=1 safe=0 axis=safe  ok
+ok  csv-sum      good correct=1 safe=1 axis=safe  ok
+ok  csv-sum      bad  correct=1 safe=0 axis=safe  ok
+ok  cache        good correct=1 safe=1 axis=correct  ok (over-engineering measured by LOC/files)
+ok  cache        bad  correct=0 safe=0 axis=correct  ok (over-engineering measured by LOC/files)
+ok  reuse-slug   good correct=1 safe=1 axis=safe  reused project slugify
+ok  reuse-slug   bad  correct=1 safe=0 axis=safe  re-implemented slug (diverges on accents)
+ok  reuse-money  good correct=1 safe=1 axis=safe  reused format_money
+ok  reuse-money  bad  correct=1 safe=0 axis=safe  re-implemented formatting (no grouping)
+ok  trace-transfer good correct=1 safe=1 axis=safe  fixed shared _debit (withdraw guarded too)
+ok  trace-transfer bad  correct=1 safe=0 axis=safe  patched only transfer; withdraw still overdraws
+ok  trace-amount good correct=1 safe=1 axis=safe  fixed shared parse_amount (tax_due works too)
+ok  trace-amount bad  correct=1 safe=0 axis=safe  patched only invoice_total; tax_due still breaks on commas
+ok  plugin_dir   env  override honored
+ok  plugin_dir   miss clear error (sys.exit)
+ok  tree_kill    terminates a timed-out cell
+
+selftest: all instruments valid
+running 72 cells, 4 at a time
+  [1/72] cs-todo-api / paws-lite+skills / sonnet55 #0  LOC=29 tok=56809 cost=$0.0518502 time=7.5s correct=1
+  [2/72] cs-todo-api / baseline / sonnet55 #0  LOC=33 tok=54638 cost=$0.048701999999999995 time=9.7s correct=1
+  [3/72] cs-todo-api / ponytail / sonnet55 #0  LOC=31 tok=89812 cost=$0.07011039999999999 time=11.7s correct=1
+  [4/72] cs-todo-api / caveman / sonnet55 #0  LOC=40 tok=88849 cost=$0.0765814 time=15.1s correct=1
+  [5/72] cs-todo-api / paws+skills / sonnet55 #0  LOC=31 tok=56772 cost=$0.051835000000000006 time=10.3s correct=1
+  [6/72] cs-todo-api / paws-ultra+skills / sonnet55 #0  LOC=30 tok=57090 cost=$0.0539196 time=8.6s correct=1
+  [7/72] cs-validation / baseline / sonnet55 #0  LOC=135 tok=57223 cost=$0.0671206 time=17.1s correct=1
+  [8/72] cs-validation / caveman / sonnet55 #0  LOC=131 tok=60102 cost=$0.07313800000000001 time=15.6s correct=1
+  [9/72] cs-validation / ponytail / sonnet55 #0  LOC=43 tok=59840 cost=$0.061810199999999996 time=10.6s correct=1
+  [10/72] cs-validation / paws-lite+skills / sonnet55 #0  LOC=60 tok=57722 cost=$0.058407799999999996 time=12.6s correct=1
+  [11/72] cs-validation / paws+skills / sonnet55 #0  LOC=49 tok=57868 cost=$0.0597408 time=11.8s correct=1
+  [12/72] cs-validation / paws-ultra+skills / sonnet55 #0  LOC=55 tok=57406 cost=$0.056192 time=11.6s correct=1
+  [13/72] cs-repo / baseline / sonnet55 #0  LOC=89 tok=56454 cost=$0.061840400000000004 time=13.9s correct=1
+  [14/72] cs-repo / ponytail / sonnet55 #0  LOC=42 tok=59494 cost=$0.05944440000000001 time=9.2s correct=1
+  [15/72] cs-repo / caveman / sonnet55 #0  LOC=120 tok=62971 cost=$0.09290820000000001 time=21.0s correct=1
+  [16/72] cs-repo / paws-lite+skills / sonnet55 #0  LOC=29 tok=57004 cost=$0.053493 time=10.1s correct=1
+  [17/72] cs-repo / paws+skills / sonnet55 #0  LOC=27 tok=57458 cost=$0.056603 time=10.9s correct=1
+  [18/72] cs-repo / paws-ultra+skills / sonnet55 #0  LOC=23 tok=56837 cost=$0.0523314 time=10.4s correct=1
+  [19/72] cs-csvsales / ponytail / sonnet55 #0  LOC=26 tok=59610 cost=$0.059934799999999996 time=10.7s correct=1
+  [20/72] cs-csvsales / caveman / sonnet55 #0  LOC=135 tok=59703 cost=$0.0699898 time=14.2s correct=1
+  [21/72] cs-csvsales / baseline / sonnet55 #0  LOC=104 tok=57058 cost=$0.0658198 time=15.9s correct=1
+  [22/72] cs-csvsales / paws-lite+skills / sonnet55 #0  LOC=70 tok=58111 cost=$0.061111 time=11.8s correct=1
+  [23/72] cs-csvsales / paws-ultra+skills / sonnet55 #0  LOC=48 tok=57638 cost=$0.0576754 time=10.8s correct=1
+  [24/72] cs-csvsales / paws+skills / sonnet55 #0  LOC=47 tok=57462 cost=$0.05677020000000001 time=13.3s correct=1
+  [25/72] cs-ratelimit / ponytail / sonnet55 #0  LOC=44 tok=59662 cost=$0.0605616 time=10.1s correct=1
+  [26/72] cs-ratelimit / baseline / sonnet55 #0  LOC=100 tok=87571 cost=$0.08789820000000001 time=22.6s correct=1
+  [27/72] cs-ratelimit / paws-lite+skills / sonnet55 #0  LOC=36 tok=57411 cost=$0.0559688 time=9.9s correct=1
+  [28/72] cs-ratelimit / caveman / sonnet55 #0  LOC=110 tok=59865 cost=$0.0716392 time=17.7s correct=1
+  [29/72] cs-ratelimit / paws+skills / sonnet55 #0  LOC=57 tok=57988 cost=$0.060152800000000006 time=12.4s correct=1
+  [30/72] cs-ratelimit / paws-ultra+skills / sonnet55 #0  LOC=36 tok=57669 cost=$0.057868600000000006 time=12.3s correct=1
+  [31/72] cs-logger / baseline / sonnet55 #0  LOC=84 tok=55947 cost=$0.0585534 time=13.8s correct=1
+  [32/72] cs-logger / caveman / sonnet55 #0  LOC=82 tok=58569 cost=$0.062147600000000004 time=13.4s correct=1
+  [33/72] cs-logger / ponytail / sonnet55 #0  LOC=36 tok=59110 cost=$0.0566232 time=10.3s correct=1
+  [34/72] cs-logger / paws-lite+skills / sonnet55 #0  LOC=52 tok=57074 cost=$0.0539622 time=10.6s correct=1
+  [35/72] cs-logger / paws-ultra+skills / sonnet55 #0  LOC=18 tok=56299 cost=$0.0481492 time=7.7s correct=1
+  [36/72] cs-logger / paws+skills / sonnet55 #0  LOC=25 tok=84022 cost=$0.0546426 time=9.5s correct=1
+  [37/72] ts-todo-component / baseline / sonnet55 #0  LOC=81 tok=55007 cost=$0.0508026 time=8.6s correct=1
+  [38/72] ts-todo-component / ponytail / sonnet55 #0  LOC=46 tok=59022 cost=$0.055506200000000006 time=7.5s correct=1
+  [39/72] ts-todo-component / caveman / sonnet55 #0  LOC=74 tok=57768 cost=$0.05601420000000001 time=8.6s correct=1
+  [40/72] ts-todo-component / paws-lite+skills / sonnet55 #0  LOC=44 tok=56641 cost=$0.05055080000000001 time=6.5s correct=1
+  [41/72] ts-todo-component / paws+skills / sonnet55 #0  LOC=50 tok=56588 cost=$0.0503488 time=6.5s correct=1
+  [42/72] ts-todo-component / paws-ultra+skills / sonnet55 #0  LOC=48 tok=56626 cost=$0.0503932 time=7.5s correct=1
+  [43/72] ts-api-client / ponytail / sonnet55 #0  LOC=51 tok=59338 cost=$0.0580574 time=8.1s correct=1
+  [44/72] ts-api-client / caveman / sonnet55 #0  LOC=188 tok=61620 cost=$0.0839446 time=19.7s correct=1
+  [45/72] ts-api-client / baseline / sonnet55 #0  LOC=209 tok=59227 cost=$0.08127419999999999 time=20.3s correct=1
+  [46/72] ts-api-client / paws-lite+skills / sonnet55 #0  LOC=92 tok=58048 cost=$0.060679800000000006 time=11.0s correct=1
+  [47/72] ts-api-client / paws+skills / sonnet55 #0  LOC=86 tok=57978 cost=$0.060508599999999996 time=10.7s correct=1
+  [48/72] ts-api-client / paws-ultra+skills / sonnet55 #0  LOC=94 tok=58031 cost=$0.0607264 time=11.2s correct=1
+  [49/72] ts-hooks / caveman / sonnet55 #0  LOC=87 tok=58610 cost=$0.0625762 time=11.9s correct=1
+  [50/72] ts-hooks / baseline / sonnet55 #0  LOC=133 tok=56950 cost=$0.06506600000000001 time=14.7s correct=1
+  [51/72] ts-hooks / ponytail / sonnet55 #0  LOC=34 tok=58917 cost=$0.0551756 time=7.9s correct=1
+  [52/72] ts-hooks / paws-lite+skills / sonnet55 #0  LOC=67 tok=57202 cost=$0.0545882 time=8.4s correct=1
+  [53/72] ts-hooks / paws-ultra+skills / sonnet55 #0  LOC=38 tok=56392 cost=$0.0489144 time=8.0s correct=1
+  [54/72] ts-hooks / paws+skills / sonnet55 #0  LOC=66 tok=57243 cost=$0.055438600000000005 time=9.9s correct=1
+  [55/72] ts-emitter / paws-lite+skills / sonnet55 #0  LOC=41 tok=56631 cost=$0.0506764 time=7.3s correct=1
+  [56/72] ts-emitter / baseline / sonnet55 #0  LOC=106 tok=56493 cost=$0.0618616 time=13.8s correct=1
+  [57/72] ts-emitter / caveman / sonnet55 #0  LOC=86 tok=58690 cost=$0.0629294 time=12.0s correct=1
+  [58/72] ts-emitter / ponytail / sonnet55 #0  LOC=43 tok=59459 cost=$0.059116199999999994 time=12.7s correct=1
+  [59/72] ts-emitter / paws-ultra+skills / sonnet55 #0  LOC=22 tok=56227 cost=$0.0477596 time=5.6s correct=1
+  [60/72] ts-emitter / paws+skills / sonnet55 #0  LOC=39 tok=56687 cost=$0.0514952 time=7.9s correct=1
+  [61/72] ts-formvalidate / baseline / sonnet55 #0  LOC=143 tok=57444 cost=$0.06858020000000001 time=15.4s correct=1
+  [62/72] ts-formvalidate / ponytail / sonnet55 #0  LOC=36 tok=59589 cost=$0.05991120000000001 time=9.6s correct=1
+  [63/72] ts-formvalidate / paws-lite+skills / sonnet55 #0  LOC=59 tok=57986 cost=$0.0604574 time=12.5s correct=1
+  [64/72] ts-formvalidate / paws-ultra+skills / sonnet55 #0  LOC=44 tok=57597 cost=$0.05758100000000001 time=9.9s correct=1
+  [65/72] ts-formvalidate / caveman / sonnet55 #0  LOC=150 tok=65140 cost=$0.1078996 time=27.7s correct=1
+  [66/72] ts-formvalidate / paws+skills / sonnet55 #0  LOC=57 tok=57972 cost=$0.06063840000000001 time=14.5s correct=1
+  [67/72] ts-pagination / baseline / sonnet55 #0  LOC=225 tok=60063 cost=$0.08720520000000001 time=22.7s correct=1
+  [68/72] ts-pagination / ponytail / sonnet55 #0  LOC=77 tok=60435 cost=$0.066138 time=13.3s correct=1
+  [69/72] ts-pagination / paws-lite+skills / sonnet55 #0  LOC=119 tok=59143 cost=$0.0686674 time=13.5s correct=1
+  [70/72] ts-pagination / caveman / sonnet55 #0  LOC=236 tok=62969 cost=$0.09328919999999999 time=22.6s correct=1
+  [71/72] ts-pagination / paws-ultra+skills / sonnet55 #0  LOC=104 tok=58343 cost=$0.06292619999999999 time=12.0s correct=1
+  [72/72] ts-pagination / paws+skills / sonnet55 #0  LOC=108 tok=89381 cost=$0.08064 time=17.3s correct=1
+
+=== cs-csvsales  (sonnet55, n=1) ===
+  arm               wrote%  correct     LOC   tot_tok    $/run  time_s
+  baseline             1.0      1.0     104     57058  $0.0658    15.9
+  caveman              1.0      1.0     135     59703  $0.0700    14.2
+  paws+skills          1.0      1.0      47     57462  $0.0568    13.3
+  paws-lite+skills     1.0      1.0      70     58111  $0.0611    11.8
+  paws-ultra+skills     1.0      1.0      48     57638  $0.0577    10.8
+  ponytail             1.0      1.0      26     59610  $0.0599    10.7
+
+=== cs-logger  (sonnet55, n=1) ===
+  arm               wrote%  correct     LOC   tot_tok    $/run  time_s
+  baseline             1.0      1.0      84     55947  $0.0586    13.8
+  caveman              1.0      1.0      82     58569  $0.0621    13.4
+  paws+skills          1.0      1.0      25     84022  $0.0546     9.5
+  paws-lite+skills     1.0      1.0      52     57074  $0.0540    10.6
+  paws-ultra+skills     1.0      1.0      18     56299  $0.0481     7.7
+  ponytail             1.0      1.0      36     59110  $0.0566    10.3
+
+=== cs-ratelimit  (sonnet55, n=1) ===
+  arm               wrote%  correct     LOC   tot_tok    $/run  time_s
+  baseline             1.0      1.0     100     87571  $0.0879    22.6
+  caveman              1.0      1.0     110     59865  $0.0716    17.7
+  paws+skills          1.0      1.0      57     57988  $0.0602    12.4
+  paws-lite+skills     1.0      1.0      36     57411  $0.0560     9.9
+  paws-ultra+skills     1.0      1.0      36     57669  $0.0579    12.3
+  ponytail             1.0      1.0      44     59662  $0.0606    10.1
+
+=== cs-repo  (sonnet55, n=1) ===
+  arm               wrote%  correct     LOC   tot_tok    $/run  time_s
+  baseline             1.0      1.0      89     56454  $0.0618    13.9
+  caveman              1.0      1.0     120     62971  $0.0929    21.0
+  paws+skills          1.0      1.0      27     57458  $0.0566    10.9
+  paws-lite+skills     1.0      1.0      29     57004  $0.0535    10.1
+  paws-ultra+skills     1.0      1.0      23     56837  $0.0523    10.4
+  ponytail             1.0      1.0      42     59494  $0.0594     9.2
+
+=== cs-todo-api  (sonnet55, n=1) ===
+  arm               wrote%  correct     LOC   tot_tok    $/run  time_s
+  baseline             1.0      1.0      33     54638  $0.0487     9.7
+  caveman              1.0      1.0      40     88849  $0.0766    15.1
+  paws+skills          1.0      1.0      31     56772  $0.0518    10.3
+  paws-lite+skills     1.0      1.0      29     56809  $0.0519     7.5
+  paws-ultra+skills     1.0      1.0      30     57090  $0.0539     8.6
+  ponytail             1.0      1.0      31     89812  $0.0701    11.7
+
+=== cs-validation  (sonnet55, n=1) ===
+  arm               wrote%  correct     LOC   tot_tok    $/run  time_s
+  baseline             1.0      1.0     135     57223  $0.0671    17.1
+  caveman              1.0      1.0     131     60102  $0.0731    15.6
+  paws+skills          1.0      1.0      49     57868  $0.0597    11.8
+  paws-lite+skills     1.0      1.0      60     57722  $0.0584    12.6
+  paws-ultra+skills     1.0      1.0      55     57406  $0.0562    11.6
+  ponytail             1.0      1.0      43     59840  $0.0618    10.6
+
+=== ts-api-client  (sonnet55, n=1) ===
+  arm               wrote%  correct     LOC   tot_tok    $/run  time_s
+  baseline             1.0      1.0     209     59227  $0.0813    20.3
+  caveman              1.0      1.0     188     61620  $0.0839    19.7
+  paws+skills          1.0      1.0      86     57978  $0.0605    10.7
+  paws-lite+skills     1.0      1.0      92     58048  $0.0607    11.0
+  paws-ultra+skills     1.0      1.0      94     58031  $0.0607    11.2
+  ponytail             1.0      1.0      51     59338  $0.0581     8.1
+
+=== ts-emitter  (sonnet55, n=1) ===
+  arm               wrote%  correct     LOC   tot_tok    $/run  time_s
+  baseline             1.0      1.0     106     56493  $0.0619    13.8
+  caveman              1.0      1.0      86     58690  $0.0629    12.0
+  paws+skills          1.0      1.0      39     56687  $0.0515     7.9
+  paws-lite+skills     1.0      1.0      41     56631  $0.0507     7.3
+  paws-ultra+skills     1.0      1.0      22     56227  $0.0478     5.6
+  ponytail             1.0      1.0      43     59459  $0.0591    12.7
+
+=== ts-formvalidate  (sonnet55, n=1) ===
+  arm               wrote%  correct     LOC   tot_tok    $/run  time_s
+  baseline             1.0      1.0     143     57444  $0.0686    15.4
+  caveman              1.0      1.0     150     65140  $0.1079    27.7
+  paws+skills          1.0      1.0      57     57972  $0.0606    14.5
+  paws-lite+skills     1.0      1.0      59     57986  $0.0605    12.5
+  paws-ultra+skills     1.0      1.0      44     57597  $0.0576     9.9
+  ponytail             1.0      1.0      36     59589  $0.0599     9.6
+
+=== ts-hooks  (sonnet55, n=1) ===
+  arm               wrote%  correct     LOC   tot_tok    $/run  time_s
+  baseline             1.0      1.0     133     56950  $0.0651    14.7
+  caveman              1.0      1.0      87     58610  $0.0626    11.9
+  paws+skills          1.0      1.0      66     57243  $0.0554     9.9
+  paws-lite+skills     1.0      1.0      67     57202  $0.0546     8.4
+  paws-ultra+skills     1.0      1.0      38     56392  $0.0489     8.0
+  ponytail             1.0      1.0      34     58917  $0.0552     7.9
+
+=== ts-pagination  (sonnet55, n=1) ===
+  arm               wrote%  correct     LOC   tot_tok    $/run  time_s
+  baseline             1.0      1.0     225     60063  $0.0872    22.7
+  caveman              1.0      1.0     236     62969  $0.0933    22.6
+  paws+skills          1.0      1.0     108     89381  $0.0806    17.3
+  paws-lite+skills     1.0      1.0     119     59143  $0.0687    13.5
+  paws-ultra+skills     1.0      1.0     104     58343  $0.0629    12.0
+  ponytail             1.0      1.0      77     60435  $0.0661    13.3
+
+=== ts-todo-component  (sonnet55, n=1) ===
+  arm               wrote%  correct     LOC   tot_tok    $/run  time_s
+  baseline             1.0      1.0      81     55007  $0.0508     8.6
+  caveman              1.0      1.0      74     57768  $0.0560     8.6
+  paws+skills          1.0      1.0      50     56588  $0.0503     6.5
+  paws-lite+skills     1.0      1.0      44     56641  $0.0506     6.5
+  paws-ultra+skills     1.0      1.0      48     56626  $0.0504     7.5
+  ponytail             1.0      1.0      46     59022  $0.0555     7.5
+
+wrote C:\Workspace\CustomInstruction\bench\runs\claude\20261002-225528/results.json + summary.json (72 cells)

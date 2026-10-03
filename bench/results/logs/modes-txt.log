@@ -1,0 +1,152 @@
+ok  todo-null    good correct=1 safe=1 axis=safe  survived null POST
+ok  todo-null    bad  correct=1 safe=0 axis=safe  crashed on null POST
+ok  safe-path    good correct=1 safe=1 axis=safe  ok
+ok  safe-path    bad  correct=1 safe=0 axis=safe  ok
+ok  critic-email good correct=1 safe=1 axis=safe  ok
+ok  critic-email bad  correct=1 safe=0 axis=safe  ok
+ok  rate-limit   good correct=1 safe=1 axis=safe  ok
+ok  rate-limit   bad  correct=1 safe=0 axis=safe  ok
+ok  sql-user     good correct=1 safe=1 axis=safe  ok
+ok  sql-user     bad  correct=1 safe=0 axis=safe  ok
+ok  auth-token   good correct=1 safe=1 axis=safe  ok
+ok  auth-token   bad  correct=1 safe=0 axis=safe  ok
+ok  csv-sum      good correct=1 safe=1 axis=safe  ok
+ok  csv-sum      bad  correct=1 safe=0 axis=safe  ok
+ok  cache        good correct=1 safe=1 axis=correct  ok (over-engineering measured by LOC/files)
+ok  cache        bad  correct=0 safe=0 axis=correct  ok (over-engineering measured by LOC/files)
+ok  reuse-slug   good correct=1 safe=1 axis=safe  reused project slugify
+ok  reuse-slug   bad  correct=1 safe=0 axis=safe  re-implemented slug (diverges on accents)
+ok  reuse-money  good correct=1 safe=1 axis=safe  reused format_money
+ok  reuse-money  bad  correct=1 safe=0 axis=safe  re-implemented formatting (no grouping)
+ok  trace-transfer good correct=1 safe=1 axis=safe  fixed shared _debit (withdraw guarded too)
+ok  trace-transfer bad  correct=1 safe=0 axis=safe  patched only transfer; withdraw still overdraws
+ok  trace-amount good correct=1 safe=1 axis=safe  fixed shared parse_amount (tax_due works too)
+ok  trace-amount bad  correct=1 safe=0 axis=safe  patched only invoice_total; tax_due still breaks on commas
+ok  plugin_dir   env  override honored
+ok  plugin_dir   miss clear error (sys.exit)
+ok  tree_kill    terminates a timed-out cell
+
+selftest: all instruments valid
+running 60 cells, 4 at a time
+  [1/60] txt-process-thread / paws / haiku #1  LOC=0 tok=27927 cost=$0.020342100000000002 time=5.2s correct=1
+  [2/60] txt-process-thread / paws / haiku #0  LOC=0 tok=28003 cost=$0.0207281 time=5.8s correct=1
+  [3/60] txt-process-thread / paws-lite / haiku #1  LOC=0 tok=27998 cost=$0.0206491 time=6.0s correct=1
+  [4/60] txt-process-thread / paws-lite / haiku #0  LOC=0 tok=28003 cost=$0.020686100000000002 time=6.9s correct=1
+  [5/60] txt-process-thread / paws-ultra / haiku #0  LOC=0 tok=27955 cost=$0.020440100000000003 time=6.1s correct=1
+  [6/60] txt-process-thread / paws-ultra / haiku #1  LOC=0 tok=27969 cost=$0.020516100000000002 time=5.8s correct=1
+  [7/60] txt-rest-graphql / paws / haiku #0  LOC=0 tok=28391 cost=$0.0226621 time=10.9s correct=1
+  [8/60] txt-rest-graphql / paws / haiku #1  LOC=0 tok=28278 cost=$0.0220911 time=10.1s correct=1
+  [9/60] txt-rest-graphql / paws-lite / haiku #1  LOC=0 tok=28194 cost=$0.0216141 time=8.0s correct=1
+  [10/60] txt-rest-graphql / paws-lite / haiku #0  LOC=0 tok=28228 cost=$0.021802099999999998 time=9.0s correct=1
+  [11/60] txt-rest-graphql / paws-ultra / haiku #1  LOC=0 tok=28119 cost=$0.0212421 time=7.8s correct=1
+  [12/60] txt-rest-graphql / paws-ultra / haiku #0  LOC=0 tok=28140 cost=$0.021356100000000003 time=8.5s correct=1
+  [13/60] txt-di-dotnet / paws / haiku #0  LOC=13 tok=28237 cost=$0.0218711 time=8.6s correct=1
+  [14/60] txt-di-dotnet / paws / haiku #1  LOC=16 tok=28304 cost=$0.022215099999999998 time=8.7s correct=1
+  [15/60] txt-di-dotnet / paws-lite / haiku #0  LOC=14 tok=28274 cost=$0.022017099999999998 time=8.0s correct=1
+  [16/60] txt-di-dotnet / paws-lite / haiku #1  LOC=11 tok=28314 cost=$0.0222231 time=8.8s correct=1
+  [17/60] txt-di-dotnet / paws-ultra / haiku #1  LOC=17 tok=28316 cost=$0.0222361 time=8.9s correct=1
+  [18/60] txt-di-dotnet / paws-ultra / haiku #0  LOC=22 tok=28402 cost=$0.022669099999999998 time=10.1s correct=1
+  [19/60] txt-ts-type-interface / paws / haiku #0  LOC=8 tok=28257 cost=$0.0219531 time=8.5s correct=1
+  [20/60] txt-ts-type-interface / paws / haiku #1  LOC=13 tok=28313 cost=$0.022245099999999997 time=9.2s correct=1
+  [21/60] txt-ts-type-interface / paws-lite / haiku #1  LOC=0 tok=28088 cost=$0.0210661 time=7.3s correct=1
+  [22/60] txt-ts-type-interface / paws-lite / haiku #0  LOC=0 tok=28180 cost=$0.0215261 time=8.2s correct=1
+  [23/60] txt-ts-type-interface / paws-ultra / haiku #0  LOC=0 tok=28186 cost=$0.0215591 time=8.5s correct=1
+  [24/60] txt-ts-type-interface / paws-ultra / haiku #1  LOC=0 tok=28437 cost=$0.0228171 time=10.2s correct=1
+  [25/60] txt-git-rebase / paws / haiku #0  LOC=5 tok=28066 cost=$0.021010099999999997 time=7.4s correct=1
+  [26/60] txt-git-rebase / paws / haiku #1  LOC=2 tok=28108 cost=$0.021217100000000003 time=7.7s correct=1
+  [27/60] txt-git-rebase / paws-lite / haiku #0  LOC=7 tok=28160 cost=$0.021438099999999998 time=8.8s correct=1
+  [28/60] txt-git-rebase / paws-lite / haiku #1  LOC=0 tok=28052 cost=$0.0208981 time=7.0s correct=1
+  [29/60] txt-git-rebase / paws-ultra / haiku #0  LOC=0 tok=28104 cost=$0.021155100000000003 time=7.0s correct=1
+  [30/60] txt-git-rebase / paws-ultra / haiku #1  LOC=0 tok=28066 cost=$0.0209711 time=7.3s correct=1
+  [31/60] txt-cache-design / paws / haiku #0  LOC=0 tok=28239 cost=$0.0218931 time=9.0s correct=1
+  [32/60] txt-cache-design / paws-lite / haiku #1  LOC=0 tok=28102 cost=$0.0211691 time=6.5s correct=1
+  [33/60] txt-cache-design / paws / haiku #1  LOC=0 tok=28233 cost=$0.0218601 time=9.3s correct=1
+  [34/60] txt-cache-design / paws-lite / haiku #0  LOC=0 tok=28209 cost=$0.021710100000000003 time=9.4s correct=1
+  [35/60] txt-csharp-async / paws / haiku #0  LOC=15 tok=28156 cost=$0.0214451 time=7.8s correct=1
+  [36/60] txt-cache-design / paws-ultra / haiku #0  LOC=0 tok=28323 cost=$0.022274099999999998 time=10.9s correct=1
+  [37/60] txt-cache-design / paws-ultra / haiku #1  LOC=0 tok=28313 cost=$0.0222241 time=10.9s correct=1
+  [38/60] txt-csharp-async / paws / haiku #1  LOC=25 tok=28332 cost=$0.0223371 time=10.3s correct=1
+  [39/60] txt-csharp-async / paws-lite / haiku #0  LOC=14 tok=28319 cost=$0.0222211 time=9.6s correct=1
+  [40/60] txt-csharp-async / paws-ultra / haiku #0  LOC=16 tok=28084 cost=$0.0210491 time=7.3s correct=1
+  [41/60] txt-csharp-async / paws-ultra / haiku #1  LOC=5 tok=28088 cost=$0.0210721 time=7.6s correct=1
+  [42/60] txt-csharp-async / paws-lite / haiku #1  LOC=33 tok=28470 cost=$0.0229761 time=10.9s correct=1
+  [43/60] txt-review-bug / paws / haiku #1  LOC=7 tok=28065 cost=$0.0209491 time=6.1s correct=1
+  [44/60] txt-review-bug / paws / haiku #0  LOC=8 tok=28125 cost=$0.021237100000000002 time=6.7s correct=1
+  [45/60] txt-review-bug / paws-lite / haiku #0  LOC=9 tok=28080 cost=$0.0209761 time=6.1s correct=1
+  [46/60] txt-review-bug / paws-lite / haiku #1  LOC=7 tok=28065 cost=$0.0208891 time=6.0s correct=1
+  [47/60] txt-review-bug / paws-ultra / haiku #0  LOC=7 tok=28088 cost=$0.021016100000000003 time=6.4s correct=1
+  [48/60] txt-review-bug / paws-ultra / haiku #1  LOC=7 tok=28111 cost=$0.0211191 time=6.2s correct=1
+  [49/60] txt-commit-msg / paws / haiku #1  LOC=7 tok=28127 cost=$0.0212761 time=6.4s correct=1
+  [50/60] txt-commit-msg / paws / haiku #0  LOC=12 tok=112943 cost=$0.032819100000000004 time=12.4s correct=1
+  [51/60] txt-commit-msg / paws-lite / haiku #1  LOC=8 tok=28143 cost=$0.0213171 time=7.0s correct=1
+  [52/60] txt-commit-msg / paws-lite / haiku #0  LOC=6 tok=28218 cost=$0.0216921 time=7.4s correct=1
+  [53/60] txt-commit-msg / paws-ultra / haiku #0  LOC=4 tok=28070 cost=$0.0209581 time=6.1s correct=1
+  [54/60] txt-readme-cli / paws / haiku #0  LOC=11 tok=28004 cost=$0.020643099999999998 time=5.5s correct=1
+  [55/60] txt-readme-cli / paws-lite / haiku #0  LOC=15 tok=28031 cost=$0.0207361 time=5.7s correct=1
+  [56/60] txt-commit-msg / paws-ultra / haiku #1  LOC=5 tok=28247 cost=$0.021837099999999998 time=8.0s correct=1
+  [57/60] txt-readme-cli / paws / haiku #1  LOC=11 tok=28043 cost=$0.0208411 time=7.2s correct=1
+  [58/60] txt-readme-cli / paws-lite / haiku #1  LOC=12 tok=28077 cost=$0.0209721 time=6.5s correct=1
+  [59/60] txt-readme-cli / paws-ultra / haiku #0  LOC=14 tok=28070 cost=$0.0209341 time=5.8s correct=1
+  [60/60] txt-readme-cli / paws-ultra / haiku #1  LOC=7 tok=28034 cost=$0.0207571 time=6.0s correct=1
+
+=== txt-cache-design  (haiku, n=2) ===
+  arm               wrote%  correct     LOC   tot_tok    $/run  time_s
+  paws                 0.0      1.0       0     28236  $0.0219     9.2
+  paws-lite            0.0      1.0       0     28156  $0.0214     7.9
+  paws-ultra           0.0      1.0       0     28318  $0.0222    10.9
+
+=== txt-commit-msg  (haiku, n=2) ===
+  arm               wrote%  correct     LOC   tot_tok    $/run  time_s
+  paws                 1.0      1.0     9.5     70535  $0.0270     9.4
+  paws-lite            1.0      1.0     7.0     28180  $0.0215     7.2
+  paws-ultra           1.0      1.0     4.5     28158  $0.0214     7.0
+
+=== txt-csharp-async  (haiku, n=2) ===
+  arm               wrote%  correct     LOC   tot_tok    $/run  time_s
+  paws                 1.0      1.0    20.0     28244  $0.0219     9.0
+  paws-lite            1.0      1.0    23.5     28394  $0.0226    10.2
+  paws-ultra           1.0      1.0    10.5     28086  $0.0211     7.4
+
+=== txt-di-dotnet  (haiku, n=2) ===
+  arm               wrote%  correct     LOC   tot_tok    $/run  time_s
+  paws                 1.0      1.0    14.5     28270  $0.0220     8.7
+  paws-lite            1.0      1.0    12.5     28294  $0.0221     8.4
+  paws-ultra           1.0      1.0    19.5     28359  $0.0225     9.5
+
+=== txt-git-rebase  (haiku, n=2) ===
+  arm               wrote%  correct     LOC   tot_tok    $/run  time_s
+  paws                 1.0      1.0     3.5     28087  $0.0211     7.6
+  paws-lite            0.5      1.0       7     28106  $0.0212     7.9
+  paws-ultra           0.0      1.0       0     28085  $0.0211     7.2
+
+=== txt-process-thread  (haiku, n=2) ===
+  arm               wrote%  correct     LOC   tot_tok    $/run  time_s
+  paws                 0.0      1.0       0     27965  $0.0205     5.5
+  paws-lite            0.0      1.0       0     28000  $0.0207     6.5
+  paws-ultra           0.0      1.0       0     27962  $0.0205     6.0
+
+=== txt-readme-cli  (haiku, n=2) ===
+  arm               wrote%  correct     LOC   tot_tok    $/run  time_s
+  paws                 1.0      1.0    11.0     28024  $0.0207     6.3
+  paws-lite            1.0      1.0    13.5     28054  $0.0209     6.1
+  paws-ultra           1.0      1.0    10.5     28052  $0.0208     5.9
+
+=== txt-rest-graphql  (haiku, n=2) ===
+  arm               wrote%  correct     LOC   tot_tok    $/run  time_s
+  paws                 0.0      1.0       0     28334  $0.0224    10.5
+  paws-lite            0.0      1.0       0     28211  $0.0217     8.5
+  paws-ultra           0.0      1.0       0     28130  $0.0213     8.1
+
+=== txt-review-bug  (haiku, n=2) ===
+  arm               wrote%  correct     LOC   tot_tok    $/run  time_s
+  paws                 1.0      1.0     7.5     28095  $0.0211     6.4
+  paws-lite            1.0      1.0     8.0     28072  $0.0209     6.0
+  paws-ultra           1.0      1.0     7.0     28100  $0.0211     6.3
+
+=== txt-ts-type-interface  (haiku, n=2) ===
+  arm               wrote%  correct     LOC   tot_tok    $/run  time_s
+  paws                 1.0      1.0    10.5     28285  $0.0221     8.8
+  paws-lite            0.0      1.0       0     28134  $0.0213     7.8
+  paws-ultra           0.0      1.0       0     28312  $0.0222     9.4
+
+wrote C:\Workspace\CustomInstruction\bench\runs\claude\20261002-222815/results.json + summary.json (60 cells)

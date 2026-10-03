@@ -1,0 +1,140 @@
+ok  todo-null    good correct=1 safe=1 axis=safe  survived null POST
+ok  todo-null    bad  correct=1 safe=0 axis=safe  crashed on null POST
+ok  safe-path    good correct=1 safe=1 axis=safe  ok
+ok  safe-path    bad  correct=1 safe=0 axis=safe  ok
+ok  critic-email good correct=1 safe=1 axis=safe  ok
+ok  critic-email bad  correct=1 safe=0 axis=safe  ok
+ok  rate-limit   good correct=1 safe=1 axis=safe  ok
+ok  rate-limit   bad  correct=1 safe=0 axis=safe  ok
+ok  sql-user     good correct=1 safe=1 axis=safe  ok
+ok  sql-user     bad  correct=1 safe=0 axis=safe  ok
+ok  auth-token   good correct=1 safe=1 axis=safe  ok
+ok  auth-token   bad  correct=1 safe=0 axis=safe  ok
+ok  csv-sum      good correct=1 safe=1 axis=safe  ok
+ok  csv-sum      bad  correct=1 safe=0 axis=safe  ok
+ok  cache        good correct=1 safe=1 axis=correct  ok (over-engineering measured by LOC/files)
+ok  cache        bad  correct=0 safe=0 axis=correct  ok (over-engineering measured by LOC/files)
+ok  reuse-slug   good correct=1 safe=1 axis=safe  reused project slugify
+ok  reuse-slug   bad  correct=1 safe=0 axis=safe  re-implemented slug (diverges on accents)
+ok  reuse-money  good correct=1 safe=1 axis=safe  reused format_money
+ok  reuse-money  bad  correct=1 safe=0 axis=safe  re-implemented formatting (no grouping)
+ok  trace-transfer good correct=1 safe=1 axis=safe  fixed shared _debit (withdraw guarded too)
+ok  trace-transfer bad  correct=1 safe=0 axis=safe  patched only transfer; withdraw still overdraws
+ok  trace-amount good correct=1 safe=1 axis=safe  fixed shared parse_amount (tax_due works too)
+ok  trace-amount bad  correct=1 safe=0 axis=safe  patched only invoice_total; tax_due still breaks on commas
+ok  plugin_dir   env  override honored
+ok  plugin_dir   miss clear error (sys.exit)
+ok  tree_kill    terminates a timed-out cell
+
+selftest: all instruments valid
+running 36 cells, 4 at a time
+  [1/36] cs-todo-api / paws / haiku #0  LOC=55 tok=57165 cost=$0.0290029 time=13.6s correct=1
+  [2/36] cs-validation / paws / haiku #0  LOC=107 tok=57839 cost=$0.0313158 time=14.7s correct=1
+  [3/36] cs-todo-api / caveman / haiku #0  LOC=83 tok=58719 cost=$0.032009100000000006 time=15.3s correct=1
+  [4/36] cs-todo-api / ponytail / haiku #0  LOC=34 tok=119354 cost=$0.0403874 time=18.7s correct=1
+  [5/36] cs-validation / caveman / haiku #0  LOC=102 tok=59018 cost=$0.033190700000000004 time=16.1s correct=1
+  [6/36] cs-repo / caveman / haiku #0  LOC=81 tok=58095 cost=$0.0297315 time=11.8s correct=1
+  [7/36] cs-validation / ponytail / haiku #0  LOC=47 tok=60357 cost=$0.034236800000000005 time=17.1s correct=1
+  [8/36] cs-repo / paws / haiku #0  LOC=94 tok=58846 cost=$0.0348131 time=18.1s correct=1
+  [9/36] cs-repo / ponytail / haiku #0  LOC=30 tok=59177 cost=$0.0300694 time=11.2s correct=1
+  [10/36] cs-csvsales / paws / haiku #0  LOC=38 tok=57165 cost=$0.0289909 time=13.3s correct=1
+  [11/36] cs-csvsales / caveman / haiku #0  LOC=57 tok=57996 cost=$0.0293912 time=13.5s correct=1
+  [12/36] cs-ratelimit / paws / haiku #0  LOC=36 tok=56849 cost=$0.027718 time=10.8s correct=1
+  [13/36] cs-csvsales / ponytail / haiku #0  LOC=10 tok=62062 cost=$0.0400316 time=24.6s correct=1
+  [14/36] cs-ratelimit / caveman / haiku #0  LOC=37 tok=58311 cost=$0.030435999999999998 time=12.3s correct=1
+  [15/36] cs-ratelimit / ponytail / haiku #0  LOC=28 tok=59934 cost=$0.0325901 time=14.6s correct=1
+  [16/36] cs-logger / paws / haiku #0  LOC=56 tok=57210 cost=$0.029156599999999998 time=12.3s correct=1
+  [17/36] cs-logger / ponytail / haiku #0  LOC=40 tok=59084 cost=$0.029704500000000002 time=10.4s correct=1
+  [18/36] cs-logger / caveman / haiku #0  LOC=63 tok=57895 cost=$0.0291414 time=11.3s correct=1
+  [19/36] ts-todo-component / paws / haiku #0  LOC=62 tok=58069 cost=$0.0318887 time=14.0s correct=1
+  [20/36] ts-todo-component / caveman / haiku #0  LOC=94 tok=58563 cost=$0.0313281 time=13.2s correct=1
+  [21/36] ts-api-client / paws / haiku #0  LOC=83 tok=57267 cost=$0.0293239 time=12.4s correct=1
+  [22/36] ts-todo-component / ponytail / haiku #0  LOC=89 tok=59989 cost=$0.0328463 time=13.7s correct=1
+  [23/36] ts-api-client / caveman / haiku #0  LOC=139 tok=59267 cost=$0.0339432 time=16.8s correct=1
+  [24/36] ts-hooks / caveman / haiku #0  LOC=39 tok=86183 cost=$0.0316264 time=11.3s correct=1
+  [25/36] ts-api-client / ponytail / haiku #0  LOC=56 tok=60418 cost=$0.0343589 time=15.6s correct=1
+  [26/36] ts-hooks / paws / haiku #0  LOC=43 tok=86309 cost=$0.035924899999999996 time=17.1s correct=1
+  [27/36] ts-hooks / ponytail / haiku #0  LOC=32 tok=59110 cost=$0.0298042 time=10.4s correct=1
+  [28/36] ts-emitter / paws / haiku #0  LOC=71 tok=57510 cost=$0.030217 time=13.5s correct=1
+  [29/36] ts-emitter / caveman / haiku #0  LOC=44 tok=58623 cost=$0.0314974 time=12.9s correct=1
+  [30/36] ts-formvalidate / paws / haiku #0  LOC=76 tok=57605 cost=$0.0305077 time=14.0s correct=1
+  [31/36] ts-formvalidate / ponytail / haiku #0  LOC=41 tok=59520 cost=$0.0310828 time=10.2s correct=1
+  [32/36] ts-emitter / ponytail / haiku #0  LOC=38 tok=62172 cost=$0.0407653 time=23.1s correct=1
+  [33/36] ts-formvalidate / caveman / haiku #0  LOC=93 tok=58893 cost=$0.0326121 time=14.7s correct=1
+  [34/36] ts-pagination / paws / haiku #0  LOC=129 tok=58364 cost=$0.0333047 time=15.3s correct=1
+  [35/36] ts-pagination / ponytail / haiku #0  LOC=159 tok=61189 cost=$0.037401000000000004 time=20.6s correct=1
+  [36/36] ts-pagination / caveman / haiku #0  LOC=149 tok=63246 cost=$0.0479824 time=31.3s correct=1
+
+=== cs-csvsales  (haiku, n=1) ===
+  arm               wrote%  correct     LOC   tot_tok    $/run  time_s
+  caveman              1.0      1.0      57     57996  $0.0294    13.5
+  paws                 1.0      1.0      38     57165  $0.0290    13.3
+  ponytail             1.0      1.0      10     62062  $0.0400    24.6
+
+=== cs-logger  (haiku, n=1) ===
+  arm               wrote%  correct     LOC   tot_tok    $/run  time_s
+  caveman              1.0      1.0      63     57895  $0.0291    11.3
+  paws                 1.0      1.0      56     57210  $0.0292    12.3
+  ponytail             1.0      1.0      40     59084  $0.0297    10.4
+
+=== cs-ratelimit  (haiku, n=1) ===
+  arm               wrote%  correct     LOC   tot_tok    $/run  time_s
+  caveman              1.0      1.0      37     58311  $0.0304    12.3
+  paws                 1.0      1.0      36     56849  $0.0277    10.8
+  ponytail             1.0      1.0      28     59934  $0.0326    14.6
+
+=== cs-repo  (haiku, n=1) ===
+  arm               wrote%  correct     LOC   tot_tok    $/run  time_s
+  caveman              1.0      1.0      81     58095  $0.0297    11.8
+  paws                 1.0      1.0      94     58846  $0.0348    18.1
+  ponytail             1.0      1.0      30     59177  $0.0301    11.2
+
+=== cs-todo-api  (haiku, n=1) ===
+  arm               wrote%  correct     LOC   tot_tok    $/run  time_s
+  caveman              1.0      1.0      83     58719  $0.0320    15.3
+  paws                 1.0      1.0      55     57165  $0.0290    13.6
+  ponytail             1.0      1.0      34    119354  $0.0404    18.7
+
+=== cs-validation  (haiku, n=1) ===
+  arm               wrote%  correct     LOC   tot_tok    $/run  time_s
+  caveman              1.0      1.0     102     59018  $0.0332    16.1
+  paws                 1.0      1.0     107     57839  $0.0313    14.7
+  ponytail             1.0      1.0      47     60357  $0.0342    17.1
+
+=== ts-api-client  (haiku, n=1) ===
+  arm               wrote%  correct     LOC   tot_tok    $/run  time_s
+  caveman              1.0      1.0     139     59267  $0.0339    16.8
+  paws                 1.0      1.0      83     57267  $0.0293    12.4
+  ponytail             1.0      1.0      56     60418  $0.0344    15.6
+
+=== ts-emitter  (haiku, n=1) ===
+  arm               wrote%  correct     LOC   tot_tok    $/run  time_s
+  caveman              1.0      1.0      44     58623  $0.0315    12.9
+  paws                 1.0      1.0      71     57510  $0.0302    13.5
+  ponytail             1.0      1.0      38     62172  $0.0408    23.1
+
+=== ts-formvalidate  (haiku, n=1) ===
+  arm               wrote%  correct     LOC   tot_tok    $/run  time_s
+  caveman              1.0      1.0      93     58893  $0.0326    14.7
+  paws                 1.0      1.0      76     57605  $0.0305    14.0
+  ponytail             1.0      1.0      41     59520  $0.0311    10.2
+
+=== ts-hooks  (haiku, n=1) ===
+  arm               wrote%  correct     LOC   tot_tok    $/run  time_s
+  caveman              1.0      1.0      39     86183  $0.0316    11.3
+  paws                 1.0      1.0      43     86309  $0.0359    17.1
+  ponytail             1.0      1.0      32     59110  $0.0298    10.4
+
+=== ts-pagination  (haiku, n=1) ===
+  arm               wrote%  correct     LOC   tot_tok    $/run  time_s
+  caveman              1.0      1.0     149     63246  $0.0480    31.3
+  paws                 1.0      1.0     129     58364  $0.0333    15.3
+  ponytail             1.0      1.0     159     61189  $0.0374    20.6
+
+=== ts-todo-component  (haiku, n=1) ===
+  arm               wrote%  correct     LOC   tot_tok    $/run  time_s
+  caveman              1.0      1.0      94     58563  $0.0313    13.2
+  paws                 1.0      1.0      62     58069  $0.0319    14.0
+  ponytail             1.0      1.0      89     59989  $0.0328    13.7
+
+wrote C:\Workspace\CustomInstruction\benchmarks\agentic\runs\20261002-005211/results.json + summary.json (36 cells)

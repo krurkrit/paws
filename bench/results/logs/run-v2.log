@@ -1,0 +1,89 @@
+ok  todo-null    good correct=1 safe=1 axis=safe  survived null POST
+ok  todo-null    bad  correct=1 safe=0 axis=safe  crashed on null POST
+ok  safe-path    good correct=1 safe=1 axis=safe  ok
+ok  safe-path    bad  correct=1 safe=0 axis=safe  ok
+ok  critic-email good correct=1 safe=1 axis=safe  ok
+ok  critic-email bad  correct=1 safe=0 axis=safe  ok
+ok  rate-limit   good correct=1 safe=1 axis=safe  ok
+ok  rate-limit   bad  correct=1 safe=0 axis=safe  ok
+ok  sql-user     good correct=1 safe=1 axis=safe  ok
+ok  sql-user     bad  correct=1 safe=0 axis=safe  ok
+ok  auth-token   good correct=1 safe=1 axis=safe  ok
+ok  auth-token   bad  correct=1 safe=0 axis=safe  ok
+ok  csv-sum      good correct=1 safe=1 axis=safe  ok
+ok  csv-sum      bad  correct=1 safe=0 axis=safe  ok
+ok  cache        good correct=1 safe=1 axis=correct  ok (over-engineering measured by LOC/files)
+ok  cache        bad  correct=0 safe=0 axis=correct  ok (over-engineering measured by LOC/files)
+ok  reuse-slug   good correct=1 safe=1 axis=safe  reused project slugify
+ok  reuse-slug   bad  correct=1 safe=0 axis=safe  re-implemented slug (diverges on accents)
+ok  reuse-money  good correct=1 safe=1 axis=safe  reused format_money
+ok  reuse-money  bad  correct=1 safe=0 axis=safe  re-implemented formatting (no grouping)
+ok  trace-transfer good correct=1 safe=1 axis=safe  fixed shared _debit (withdraw guarded too)
+ok  trace-transfer bad  correct=1 safe=0 axis=safe  patched only transfer; withdraw still overdraws
+ok  trace-amount good correct=1 safe=1 axis=safe  fixed shared parse_amount (tax_due works too)
+ok  trace-amount bad  correct=1 safe=0 axis=safe  patched only invoice_total; tax_due still breaks on commas
+ok  plugin_dir   env  override honored
+ok  plugin_dir   miss clear error (sys.exit)
+ok  tree_kill    terminates a timed-out cell
+
+selftest: all instruments valid
+running 36 cells, 4 at a time
+  [1/36] trace-transfer / lantern-v2 / haiku #0  LOC=17 tok=84755 cost=$0.0673186 time=11.5s correct=1
+  [2/36] trace-transfer / lantern-v2 / haiku #1  LOC=18 tok=84807 cost=$0.031039800000000003 time=12.2s correct=1
+  [3/36] trace-transfer / cinder-v2 / haiku #0  LOC=17 tok=84897 cost=$0.0314592 time=12.2s correct=1
+  [4/36] trace-transfer / lantern-v2 / haiku #2  LOC=18 tok=85635 cost=$0.0338871 time=15.3s correct=1
+  [5/36] trace-transfer / caveman / haiku #0  LOC=18 tok=86504 cost=$0.0322545 time=11.4s correct=1
+  [6/36] trace-transfer / cinder-v2 / haiku #1  LOC=17 tok=84960 cost=$0.0317428 time=14.7s correct=1
+  [7/36] trace-transfer / cinder-v2 / haiku #2  LOC=19 tok=115721 cost=$0.0401377 time=19.2s correct=1
+  [8/36] trace-transfer / ponytail / haiku #0  LOC=17 tok=88531 cost=$0.033274700000000004 time=10.1s correct=1
+  [9/36] trace-transfer / caveman / haiku #1  LOC=16 tok=86616 cost=$0.0327507 time=12.8s correct=1
+  [10/36] trace-transfer / caveman / haiku #2  LOC=16 tok=117304 cost=$0.040586000000000004 time=18.3s correct=1
+  [11/36] trace-transfer / ponytail / haiku #1  LOC=18 tok=89020 cost=$0.034915 time=13.5s correct=1
+  [12/36] trace-transfer / ponytail / haiku #2  LOC=16 tok=120559 cost=$0.0427668 time=19.9s correct=1
+  [13/36] todo-null / lantern-v2 / haiku #0  LOC=71 tok=140745 cost=$0.0864641 time=67.4s correct=1
+  [14/36] todo-null / cinder-v2 / haiku #0  LOC=81 tok=125726 cost=$0.0598248 time=39.0s correct=1
+  [15/36] todo-null / lantern-v2 / haiku #1  LOC=82 tok=125951 cost=$0.060068699999999996 time=39.9s correct=1
+  [16/36] todo-null / lantern-v2 / haiku #2  LOC=76 tok=126998 cost=$0.061847599999999996 time=42.6s correct=1
+  [17/36] todo-null / cinder-v2 / haiku #2  LOC=87 tok=129876 cost=$0.06762299999999999 time=47.0s correct=1
+  [18/36] todo-null / cinder-v2 / haiku #1  LOC=77 tok=133678 cost=$0.0744998 time=53.6s correct=1
+  [19/36] todo-null / caveman / haiku #0  LOC=95 tok=140958 cost=$0.0849943 time=64.7s correct=1
+  [20/36] todo-null / caveman / haiku #1  LOC=77 tok=132064 cost=$0.0679268 time=36.4s correct=1
+  [21/36] todo-null / ponytail / haiku #0  LOC=67 tok=136584 cost=$0.072673 time=51.3s correct=1
+  [22/36] todo-null / caveman / haiku #2  LOC=94 tok=138046 cost=$0.07917979999999998 time=56.7s correct=1
+  [23/36] critic-email / lantern-v2 / haiku #0  LOC=9 tok=84624 cost=$0.0317104 time=14.2s correct=1
+  [24/36] todo-null / ponytail / haiku #2  LOC=57 tok=129289 cost=$0.058986199999999996 time=35.7s correct=1
+  [25/36] todo-null / ponytail / haiku #1  LOC=64 tok=132565 cost=$0.0654018 time=44.0s correct=1
+  [26/36] critic-email / cinder-v2 / haiku #0  LOC=16 tok=85714 cost=$0.0344641 time=17.0s correct=1
+  [27/36] critic-email / lantern-v2 / haiku #2  LOC=8 tok=87073 cost=$0.040126999999999996 time=24.3s correct=1
+  [28/36] critic-email / lantern-v2 / haiku #1  LOC=20 tok=96040 cost=$0.0716205 time=59.2s correct=1
+  [29/36] critic-email / caveman / haiku #0  LOC=7 tok=86043 cost=$0.0316089 time=12.7s correct=1
+  [30/36] critic-email / cinder-v2 / haiku #1  LOC=9 tok=113829 cost=$0.0377534 time=19.0s correct=1
+  [31/36] critic-email / cinder-v2 / haiku #2  LOC=39 tok=89438 cost=$0.048728400000000005 time=33.7s correct=1
+  [32/36] critic-email / ponytail / haiku #0  LOC=5 tok=89221 cost=$0.0360228 time=16.8s correct=1
+  [33/36] critic-email / caveman / haiku #1  LOC=5 tok=87288 cost=$0.035721199999999995 time=17.4s correct=1
+  [34/36] critic-email / caveman / haiku #2  LOC=7 tok=87340 cost=$0.03607099999999999 time=19.0s correct=1
+  [35/36] critic-email / ponytail / haiku #1  LOC=5 tok=88585 cost=$0.033927700000000005 time=13.4s correct=1
+  [36/36] critic-email / ponytail / haiku #2  LOC=5 tok=89709 cost=$0.0374953 time=18.7s correct=1
+
+=== critic-email  (haiku, n=3) ===
+  arm               wrote%  correct     LOC   tot_tok    $/run  time_s
+  caveman              1.0      1.0       7     86890  $0.0345    16.4
+  cinder-v2            1.0      1.0      16     96327  $0.0403    23.2
+  lantern-v2           1.0      1.0       9     89246  $0.0478    32.6
+  ponytail             1.0      1.0       5     89172  $0.0358    16.3
+
+=== todo-null  (haiku, n=3) ===
+  arm               wrote%  correct     LOC   tot_tok    $/run  time_s
+  caveman              1.0      1.0      94    137023  $0.0774    52.6
+  cinder-v2            1.0      1.0      81    129760  $0.0673    46.5
+  lantern-v2           1.0      1.0      76    131231  $0.0695    50.0
+  ponytail             1.0      1.0      64    132813  $0.0657    43.7
+
+=== trace-transfer  (haiku, n=3) ===
+  arm               wrote%  correct     LOC   tot_tok    $/run  time_s
+  caveman              1.0      1.0      16     96808  $0.0352    14.2
+  cinder-v2            1.0      1.0      17     95193  $0.0344    15.4
+  lantern-v2           1.0      1.0      18     85066  $0.0441    13.0
+  ponytail             1.0      1.0      17     99370  $0.0370    14.5
+
+wrote C:\Workspace\CustomInstruction\benchmarks\agentic\runs\20261001-223256/results.json + summary.json (36 cells)

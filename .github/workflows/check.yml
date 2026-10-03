@@ -1,0 +1,46 @@
+name: check
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Generated files match src/
+        run: python scripts/build.py --check
+
+      - name: Manifests are valid JSON with matching versions
+        run: |
+          for f in .claude-plugin/*.json .codex-plugin/*.json .agents/plugins/*.json hooks/hooks.json; do
+            python -m json.tool "$f" > /dev/null || { echo "invalid JSON: $f"; exit 1; }
+          done
+          python - <<'EOF'
+          import json, sys
+          v = {f: json.load(open(f))["version"] for f in (".claude-plugin/plugin.json", ".codex-plugin/plugin.json")}
+          if len(set(v.values())) != 1:
+              sys.exit(f"plugin versions differ: {v}")
+          EOF
+
+      - name: Hooks run
+        env:
+          HOME: ${{ runner.temp }}/home
+        run: |
+          for f in hooks/*.js; do node --check "$f"; done
+          node hooks/paws-start.js | grep -q '"hookEventName":"SessionStart"'
+          echo '{"prompt":"paws ultra"}' | node hooks/paws-switch.js | grep -q 'Active paws mode: ultra'
+          test "$(cat "$HOME/.paws/mode")" = ultra
+          node hooks/paws-start.js | grep -q 'Active paws mode: ultra'
+          echo '{"prompt":"stop paws"}' | node hooks/paws-switch.js > /dev/null
+          test -z "$(node hooks/paws-start.js)"
+          test -z "$(echo '{"prompt":"hello"}' | node hooks/paws-switch.js)"

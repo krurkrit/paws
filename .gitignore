@@ -1,0 +1,30 @@
+# Raw benchmark runs (per-cell workdirs, ~130 MB); keep the curated bench/results/ instead
+bench/runs/
+
+# Third-party fixture (its own git clone, ~10 MB); see bench/README.md to clone it
+bench/fixtures/full-stack-fastapi-template/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Node
+node_modules/
+
+# .NET build output (C# tasks)
+bin/
+obj/
+TestResults/
+
+# Local Claude Code / editor settings
+.claude/settings.local.json
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
